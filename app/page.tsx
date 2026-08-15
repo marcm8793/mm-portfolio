@@ -1,69 +1,161 @@
-import Image from "next/image";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr/ArrowRight";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr/ArrowUpRight";
+import { FilePdf } from "@phosphor-icons/react/dist/ssr/FilePdf";
+
+import { FinancialCaseFile } from "@/components/financial-case-file";
+import { GitHubActivity } from "@/components/github-activity";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { Badge } from "@/components/ui/badge";
+import { featuredProject } from "@/lib/projects";
+
+const directionContract = `<!--
+THESIS: Public work is a continuous record, not a polished sales deck.
+OWN-WORLD: An analyst's working paper built from ledger rules, paper grain, index tabs, proof marks, and inspectable code/finance evidence.
+STORY: Introduce Marc's finance-software thesis, inspect Savyy as the sole featured project, read live public activity, then continue into about, resume, writing, and contact.
+FIRST VIEWPORT: Asymmetric thesis left and layered app case right, crossed by a full-width recent-public-activity ledger.
+FORM: Activity Ledger, the first-choice experience form; semantic Server Components, cached GitHub GraphQL contribution counts plus public REST detail, tactile raster paper, crisp SVG geometry, and seed key activity-ledger.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->`;
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="portfolio-shell">
+      <div
+        hidden
+        data-direction-contract="activity-ledger"
+        dangerouslySetInnerHTML={{ __html: directionContract }}
+      />
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+      <SiteHeader />
+
+      <main id="main-content">
+        <section className="hero" id="home" aria-labelledby="hero-title">
+          <div className="hero-grid">
+            <div className="hero-copy">
+              <h1 id="hero-title">Developer focused on financial tools.</h1>
+              <p>
+                I build and write about technology, development, and finance—making
+                complex systems easier to inspect and use.
+              </p>
+              <div className="hero-actions">
+                <a className="action action-primary" href="#projects">
+                  Explore my work <ArrowRight aria-hidden="true" />
+                </a>
+                <a
+                  className="action action-secondary"
+                  href="https://www.marcmansour.dev/blog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Read the journal <ArrowUpRight aria-hidden="true" />
+                </a>
+              </div>
+              <p className="hero-note">Finance × software · Paris</p>
+            </div>
+            <FinancialCaseFile projectName={featuredProject.name} />
+          </div>
+          <GitHubActivity />
+          <svg
+            className="proof-arrow"
+            viewBox="0 0 300 120"
+            aria-hidden="true"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+            <defs>
+              <marker
+                id="ledger-arrowhead"
+                markerWidth="10"
+                markerHeight="10"
+                refX="8"
+                refY="5"
+                orient="auto"
+              >
+                <path d="M1 1L9 5L1 9" />
+              </marker>
+            </defs>
+            <path d="M292 8C214 18 92 40 16 108" markerEnd="url(#ledger-arrowhead)" />
+          </svg>
+        </section>
+
+        <section className="project-section ruled-section" id="projects">
+          <header className="section-heading">
+            <h2>One financial tool, built for the whole picture.</h2>
+            <p>
+              Savyy brings accounts, transactions, budgets, and market context into
+              one privacy-first product for people across France and Europe.
+            </p>
+          </header>
+
+          <article className="project-dossier" aria-labelledby="savyy-title">
+            <div className="project-summary">
+              <div className="project-badges">
+                {featuredProject.badges.map((badge, index) => (
+                  <Badge
+                    className={`ledger-badge${index === 0 ? "" : " ledger-badge-outline"}`}
+                    variant={index === 0 ? "default" : "outline"}
+                    key={badge}
+                  >
+                    {badge}
+                  </Badge>
+                ))}
+              </div>
+              <h3 id="savyy-title">{featuredProject.name}</h3>
+              <p>{featuredProject.description}</p>
+              <a
+                href={featuredProject.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Savyy <ArrowUpRight aria-hidden="true" />
+              </a>
+            </div>
+            <dl className="project-premise">
+              {featuredProject.details.map((detail) => (
+                <div key={detail.label}>
+                  <dt>{detail.label}</dt>
+                  <dd>{detail.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </article>
+        </section>
+
+        <section className="binder-index ruled-section" aria-label="About, resume, and blog">
+          <article id="about">
+            <h2>Finance gives me the questions. Software gives me a way to test them.</h2>
+            <p>
+              I’m Marc, a developer and finance enthusiast building tools and writing
+              for readers on both sides of that intersection.
+            </p>
+          </article>
+          <article id="resume">
+            <h2>How the work gets done.</h2>
+            <p>A concise record of my experience and tools.</p>
+            <a
+              href="https://www.marcmansour.dev/CVMM-dev-en.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FilePdf aria-hidden="true" /> Open résumé
+            </a>
+          </article>
+          <article id="blog">
+            <h2>Field notes for builders and finance-minded readers.</h2>
+            <p>Technology, development, and finance—written for a broad public.</p>
+            <a
+              href="https://www.marcmansour.dev/blog"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit the blog <ArrowUpRight aria-hidden="true" />
+            </a>
+          </article>
+        </section>
       </main>
+
+      <SiteFooter />
     </div>
   );
 }

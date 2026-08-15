@@ -1,0 +1,244 @@
+{
+  "title": "Choose the homepage’s visual world",
+  "question": "Which world should shape a public portfolio built around financial tools, GitHub activity, and a flagship app?",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Security Printer’s Proof",
+      "kicker": "THE ROLL",
+      "lineage": "banknote engraver’s progressive proof sheets",
+      "thesis": "Your work appears as verifiable layers of craft: source activity, one flagship financial instrument, and public writing registered into a single proof.",
+      "palette": [
+        "#E9EEF2",
+        "#0C2D48",
+        "#008C7A",
+        "#FF5A36",
+        "#101820"
+      ],
+      "materials": [
+        "cool cotton bond",
+        "intaglio linework",
+        "registration marks",
+        "guilloché fields"
+      ],
+      "viewport": "A navigation registration strip crosses a cool engraved field; the developer/finance thesis anchors the left, GitHub activity forms a living proof lattice on the right, and the featured financial app begins as a numbered lower band.",
+      "risk": "It can resemble a bank or crypto launch if proof marks become decoration instead of evidence.",
+      "raised": [
+        {
+          "from": "Cracktro Queue",
+          "raise": "Hierarchy is carried by depth and brightness before any container is introduced."
+        },
+        {
+          "from": "Rebel Menu",
+          "raise": "Section changes land as decisive whole-frame transitions rather than scattered effects."
+        },
+        {
+          "from": "Futurist Book",
+          "raise": "Activity numbers gain kinetic emphasis only when the underlying work changes."
+        },
+        {
+          "from": "Orizuru Sequence",
+          "raise": "Every section retains visible provenance from one continuous source sheet."
+        },
+        {
+          "from": "Coiled Tower",
+          "raise": "GitHub history accumulates as a visible construction record, not a static badge."
+        }
+      ],
+      "comp": ".impeccable/mocks/decision/homepage-security-proof.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "Analyst’s Working Paper",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "research workbooks and annotated model printouts",
+      "thesis": "The homepage reads like a working thesis backed by inspectable code, project evidence, and margin notes rather than a finished sales deck.",
+      "palette": [
+        "#F4F7F5",
+        "#101828",
+        "#174EA6",
+        "#B6F23A",
+        "#D93D45"
+      ],
+      "materials": [
+        "blue ledger ruling",
+        "carbon annotations",
+        "chart overlays",
+        "index tabs"
+      ],
+      "viewport": "A concise working memo opens with the developer/finance thesis, a marked-up flagship-app figure, and a narrow GitHub evidence column; navigation behaves like workbook tabs.",
+      "risk": "This is the most naturally legible direction, but it can collapse into a familiar fintech dashboard if the working evidence is too tidy.",
+      "comp": ".impeccable/mocks/decision/homepage-analyst-paper.webp"
+    },
+    {
+      "id": "challenger-seven-segment",
+      "label": "Instrument Display",
+      "verdict": "competitive",
+      "lineage": "seven-segment clocks, price totems, and scoreboards",
+      "thesis": "Projects and activity occupy fixed cells whose state changes in place, turning the homepage into a public instrument panel.",
+      "palette": [
+        "#090B0D",
+        "#F04438",
+        "#F5A524",
+        "#44C553",
+        "#343A40"
+      ],
+      "materials": [
+        "matte instrument glass",
+        "lit segment masks",
+        "ghost cells"
+      ],
+      "viewport": "A monumental segmented statement sits above mode-button navigation, a synchronized GitHub cell bank, and the featured financial app treated as the primary instrument.",
+      "case": "It strongly identifies finance and software as measurable systems, but loses to the proof sheet on prose and broad-public readability.",
+      "risk": "Long-form writing, résumé detail, and nuanced project stories can feel forced inside rigid cells.",
+      "comp": ".impeccable/mocks/decision/homepage-instrument-display.webp",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-seven-segment-alarm-clock-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/signals-instruments-seven-segment-alarm-clock.webp"
+    },
+    {
+      "id": "challenger-cracktro",
+      "label": "Cracktro Queue",
+      "verdict": "declined",
+      "lineage": "bitmap title screens and layered demo-scene scrollers",
+      "thesis": "GitHub events, posts, and projects move through one luminous depth-ranked queue.",
+      "palette": [
+        "#030405",
+        "#F2EEE5",
+        "#A6A6A6",
+        "#E9A23B"
+      ],
+      "materials": [
+        "emissive void",
+        "bitmap baselines",
+        "drifting dust"
+      ],
+      "viewport": "An ivory developer/finance statement holds still while activity planes drift behind it and the featured project pulls into focus.",
+      "case": "It speaks vividly to developer culture but narrows the public finance audience and obscures the project story.",
+      "risk": "The portfolio could read as retro-computing fandom before it reads as financial-tool expertise.",
+      "kept": "Depth and brightness can establish hierarchy without boxing every item.",
+      "hero": "https://impeccable.style/worlds/cards/operate-c-cracktro-scroller-queue-hero.webp"
+    },
+    {
+      "id": "challenger-rebel",
+      "label": "Rebel Menu",
+      "verdict": "declined",
+      "lineage": "torn-paper game menus and full-frame poster splashes",
+      "thesis": "Every portfolio section arrives as a forceful full-screen selection rather than a polite scroll target.",
+      "palette": [
+        "#D71920",
+        "#080808",
+        "#FFFFFF",
+        "#BFC0C2"
+      ],
+      "materials": [
+        "torn paper",
+        "halftone fields",
+        "comic hatching"
+      ],
+      "viewport": "A scarlet frame launches the visitor through angled navigation shards toward the featured financial app.",
+      "case": "The navigation is memorable, but the cultural signal fights the measured credibility of financial tools and broadens no product truth.",
+      "risk": "The visual attitude can overpower the work and make finance content feel promotional.",
+      "kept": "A transition should commit the whole frame, not sprinkle unrelated hover effects.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-rebel-menu-interface-hero.webp"
+    },
+    {
+      "id": "challenger-futurist",
+      "label": "Bolted Futurist Book",
+      "verdict": "declined",
+      "lineage": "machine-bound futurist books and kinetic wood type",
+      "thesis": "Code activity and market ideas collide as typographic events bolted into one fast mechanical volume.",
+      "palette": [
+        "#EFE7D2",
+        "#17130F",
+        "#C92A2A",
+        "#A9ADB2"
+      ],
+      "materials": [
+        "unvarnished stock",
+        "wood type",
+        "aluminum fasteners"
+      ],
+      "viewport": "An angled developer/finance declaration slams across a bolted spread, with GitHub events and the flagship app entering as typographic pressure points.",
+      "case": "It expresses speed and making, but weakens scanability and the calm trust needed for financial-tool proof.",
+      "risk": "The kinetic composition can turn substantive work into spectacle.",
+      "kept": "Numbers and activity labels may change weight and angle when their underlying state changes.",
+      "hero": "https://impeccable.style/worlds/cards/design-canon-futurist-bolted-book-hero.webp"
+    },
+    {
+      "id": "challenger-orizuru",
+      "label": "Orizuru Sequence",
+      "verdict": "declined",
+      "lineage": "a single washi sheet transformed through recoverable folds",
+      "thesis": "One continuous surface unfolds from identity to code activity, project anatomy, writing, and contact.",
+      "palette": [
+        "#D63C32",
+        "#F2EFE8",
+        "#171717",
+        "#C9A227"
+      ],
+      "materials": [
+        "vermilion washi",
+        "crease diagrams",
+        "sumi notes"
+      ],
+      "viewport": "A folded red plane opens into the developer/finance thesis while numbered creases preview the routes through work and writing.",
+      "case": "The continuous transformation is elegant, but the cultural connection to financial development is too indirect for a first encounter.",
+      "risk": "Visitors may remember the folding metaphor and not the work it was meant to reveal.",
+      "kept": "Sections should preserve visible provenance as parts of one authored system.",
+      "hero": "https://impeccable.style/worlds/cards/paper-folds-pleats-deployable-orizuru-crane-sequence-hero.webp"
+    },
+    {
+      "id": "challenger-clay",
+      "label": "Coiled Work Tower",
+      "verdict": "declined",
+      "lineage": "monumental earthen towers built course by course",
+      "thesis": "The portfolio rises as a cumulative record of commits, shipped tools, essays, and durable expertise.",
+      "palette": [
+        "#9B4F32",
+        "#5B3326",
+        "#F1E8D8",
+        "#31241E"
+      ],
+      "materials": [
+        "raw terracotta",
+        "slip seams",
+        "thumb-smoothed courses"
+      ],
+      "viewport": "A vertical construction record rises through the screen, with the current GitHub course and featured app embedded as structural milestones.",
+      "case": "Accumulation maps honestly to a career, but the hand-built material does not identify finance or software quickly enough.",
+      "risk": "The earthy metaphor can imply craft lifestyle before technical precision.",
+      "kept": "Activity should accumulate into a visible construction record rather than appear as a decorative badge.",
+      "hero": "https://impeccable.style/worlds/cards/clay-ceramics-fracture-coiled-earth-tower-hero.webp"
+    }
+  ],
+  "reroll": {
+    "registers": [
+      "safer",
+      "bolder"
+    ]
+  },
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "Polished Portfolio Grid",
+    "thesis": "A direct introduction, featured-project card, GitHub activity panel, article list, and conventional contact close executed at high craft.",
+    "palette": [
+      "#FFFFFF",
+      "#111827",
+      "#2563EB",
+      "#E5E7EB"
+    ],
+    "materials": [
+      "clean responsive grid",
+      "project screenshots",
+      "quiet cards"
+    ],
+    "viewport": "A familiar top navigation frames a concise introduction and primary explore-work action, followed by the financial app and GitHub activity in orderly cards.",
+    "risk": "It is immediately understandable but intentionally similar to countless developer portfolios.",
+    "comp": ".impeccable/mocks/decision/homepage-canon.webp"
+  },
+  "steer": true
+}

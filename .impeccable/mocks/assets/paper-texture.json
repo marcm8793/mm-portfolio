@@ -1,0 +1,5 @@
+{
+  "prompt": "Create exactly one seamless, tileable, high-resolution pale recycled ledger-paper texture for use as a subtle website background asset. Straight-on flat scan, evenly lit, no perspective, no shadows, no objects, no holes, no clips, no folds, no stains, no handwriting, no lines, no grid, no text, no symbols, no logos, no watermark. Warm cool-white base near #F4F7F5 with extremely subtle natural cellulose fibers, faint tooth, tiny irregular speckles, and gentle analog scan variation. Very low contrast so dark navy text remains highly legible and WCAG-friendly when overlaid. The texture must feel like refined archival research paper, not parchment, kraft paper, concrete, fabric, or grunge. Edge-to-edge uniform material suitable for CSS background tiling without obvious seams.",
+  "approved": true,
+  "output": "public/paper-texture.webp"
+}

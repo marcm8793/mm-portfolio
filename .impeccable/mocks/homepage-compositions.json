@@ -1,0 +1,43 @@
+{
+  "title": "Choose the homepage composition",
+  "question": "All three use the confirmed Analyst’s Working Paper identity. Pick the composition I should build.",
+  "options": [
+    {
+      "id": "working-paper",
+      "label": "Working Paper",
+      "kicker": "CONFIRMED DIRECTION",
+      "lineage": "financial research workbook + annotated model printout",
+      "thesis": "The finance app is the evidence; Marc’s point of view is written in its margins.",
+      "palette": ["#F4F7F5", "#101828", "#174EA6", "#B6F23A", "#D93D45"],
+      "materials": ["ledger ruling", "carbon notes", "index tabs"],
+      "viewport": "Thesis left, dominant annotated app figure center, GitHub evidence rail right.",
+      "risk": "The three-column opening asks the mobile adaptation to be especially disciplined.",
+      "comp": ".impeccable/mocks/decision/homepage-analyst-paper.webp"
+    },
+    {
+      "id": "evidence-workbench",
+      "label": "Evidence Workbench",
+      "kicker": "VARIATION 02",
+      "lineage": "equity-research tear sheet + developer inspection bench",
+      "thesis": "One oversized product specimen becomes a workbench where finance and code are inspected together.",
+      "palette": ["#F4F7F5", "#101828", "#174EA6", "#B6F23A", "#D93D45"],
+      "materials": ["graph paper", "proof marks", "pinned data slips"],
+      "viewport": "Compact thesis band above a near-full-width app workbench; GitHub activity is pinned to its edge.",
+      "risk": "The product specimen must remain readable without feeling like a dashboard screenshot.",
+      "comp": ".impeccable/mocks/decision/homepage-evidence-workbench.webp"
+    },
+    {
+      "id": "activity-ledger",
+      "label": "Activity Ledger",
+      "kicker": "VARIATION 03",
+      "lineage": "engineering lab book + market activity ledger",
+      "thesis": "Marc’s public making becomes the page’s continuous record, with the finance app filed as the lead case.",
+      "palette": ["#F4F7F5", "#101828", "#174EA6", "#B6F23A", "#D93D45"],
+      "materials": ["ledger cells", "registry stamps", "case-file overlays"],
+      "viewport": "A horizontal GitHub activity ledger cuts through the hero; the finance app dossier overlaps below.",
+      "risk": "The activity grid must support the story without overpowering the project itself.",
+      "comp": ".impeccable/mocks/decision/homepage-activity-ledger.webp"
+    }
+  ],
+  "steer": true
+}
