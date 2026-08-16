@@ -1,0 +1,48 @@
+{
+  "title": "Choose the Savyy project-page structure",
+  "question": "Each direction treats Savyy as the evidence of a complete solo build. Choose how that evidence should unfold.",
+  "options": [
+    {
+      "id": "one-product-manifesto",
+      "label": "One Product, All the Way Through",
+      "kicker": "THE ROLL",
+      "lineage": "a founder's thesis pinned above the complete production record",
+      "thesis": "One serious product says more about my work than a shelf of tutorial builds, and Savyy carries the proof.",
+      "palette": ["#0b111b", "#edf3f0", "#78a8ff", "#b9e84b", "#ff7d86"],
+      "materials": ["night ledger stock", "cobalt proof rules", "full-scale product evidence"],
+      "viewport": "A large founder statement occupies the left half while an overlapping web-and-mobile Savyy specimen fills the right; a narrow proof register immediately names solo full-stack ownership, 4,000+ supported banks, and web, iOS, and Android delivery.",
+      "risk": "The statement can feel self-congratulatory unless real product evidence enters the first viewport at equal scale.",
+      "comp": ".impeccable/mocks/decision/projects-one-product-manifesto.webp"
+    },
+    {
+      "id": "founders-build-ledger",
+      "label": "The Founder's Build Ledger",
+      "lineage": "a numbered construction record from financial problem to shipped product",
+      "thesis": "Savyy unfolds as the record of one person taking a financial product from first constraint to daily operation.",
+      "palette": ["#f4f7f5", "#101828", "#174ea6", "#9fd818", "#c8313b"],
+      "materials": ["ruled working paper", "numbered dossier leaves", "dated release evidence"],
+      "viewport": "A compact Savyy title and founder note open beside a vertical build index; the first three entries, banking connectivity, private categorization, and multi-platform delivery, begin as oversized ledger rows with screenshots clipped into the record.",
+      "risk": "A chronological structure can hide the product's present usefulness if early construction notes dominate the opening.",
+      "comp": ".impeccable/mocks/decision/projects-founders-build-ledger.webp"
+    },
+    {
+      "id": "savyy-in-the-hands",
+      "label": "Savyy in the Hands",
+      "lineage": "a product journey with the engineering exposed beneath each interaction",
+      "thesis": "The case follows what someone does with Savyy, then opens each moment to show the systems I built underneath it.",
+      "palette": ["#f4f7f5", "#fbfcfa", "#174ea6", "#101828", "#9fd818"],
+      "materials": ["paired product screens", "annotated flow lines", "technical evidence drawers"],
+      "viewport": "A wide web dashboard and a tall mobile screen share the fold; a numbered path moves from connecting a bank to understanding spending, while founder annotations expose Bridge, shared data, privacy controls, and native capabilities.",
+      "risk": "The experience-first sequence can understate the breadth of solo engineering until the technical layer is opened.",
+      "comp": ".impeccable/mocks/decision/projects-savyy-in-the-hands.webp"
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "steer": true
+}

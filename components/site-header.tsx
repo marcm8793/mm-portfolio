@@ -2,6 +2,7 @@
 
 import { ArrowRightIcon } from "@phosphor-icons/react/dist/csr/ArrowRight";
 import { ListIcon } from "@phosphor-icons/react/dist/csr/List";
+import type { Route } from "next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -26,9 +27,9 @@ const navigation = [
   { label: "Home", homeHref: "#home", awayHref: "/#home", activeKey: "#home" },
   {
     label: "Projects",
-    homeHref: "#projects",
-    awayHref: "/#projects",
-    activeKey: "#projects",
+    homeHref: "/projects",
+    awayHref: "/projects",
+    activeKey: "/projects",
   },
   { label: "About", homeHref: "/about", awayHref: "/about", activeKey: "/about" },
   {
@@ -47,7 +48,7 @@ const navigation = [
 ] as const;
 
 type SiteHeaderProps = {
-  activePage?: "home" | "about" | "contact";
+  activePage?: "home" | "projects" | "about" | "contact";
 };
 
 export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
@@ -56,7 +57,9 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
       ? "/about"
       : activePage === "contact"
         ? "/contact"
-        : "#home",
+        : activePage === "projects"
+          ? "/projects"
+          : "#home",
   );
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -87,7 +90,14 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
   };
 
   const homeHref = activePage === "home" ? "#home" : "/#home";
-  const pageCode = activePage === "contact" ? "C" : activePage === "about" ? "B" : "A";
+  const pageCode =
+    activePage === "contact"
+      ? "C"
+      : activePage === "about"
+        ? "B"
+        : activePage === "projects"
+          ? "P"
+          : "A";
 
   return (
     <header className="sticky top-0 z-40 grid min-h-[4.6rem] grid-cols-[minmax(0,1fr)_auto] border-b border-[var(--cobalt)] bg-[var(--header-surface-strong)] min-[901px]:relative min-[901px]:top-auto min-[901px]:z-20 min-[901px]:min-h-[4.8rem] min-[901px]:grid-cols-[15rem_1fr] min-[901px]:bg-[var(--header-surface)] min-[1181px]:grid-cols-[minmax(15rem,0.92fr)_minmax(40rem,2.2fr)_8.75rem]">
@@ -116,7 +126,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
                     "relative flex h-full min-h-[4.8rem] items-center justify-center rounded-none border-t border-l border-[var(--rule-soft)] border-t-[var(--cobalt)] bg-[var(--tab-surface)] p-0 font-mono [font-size:var(--type-label)] tracking-[0.05em] text-[var(--ink)] uppercase no-underline transition-colors duration-[180ms] hover:bg-[var(--paper-raised)] hover:text-[var(--cobalt)] aria-[current=page]:font-bold aria-[current=page]:text-[var(--cobalt)] aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:decoration-[var(--signal)] aria-[current=page]:underline-offset-[0.85rem]",
                     index === navigation.length - 1 && "border-r",
                   )}
-                  href={href}
+                  href={href as Route}
                   aria-current={isActive ? "page" : undefined}
                   onClick={() => chooseDestination(item.activeKey)}
                 >
@@ -178,7 +188,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
                     <li key={item.label}>
                       <Link
                         className="grid min-h-[4.2rem] grid-cols-[1fr_auto] items-center gap-4 border-b border-[var(--rule-soft)] py-[0.9rem] pr-8 pl-12 font-mono [font-size:var(--type-control)] font-semibold tracking-[0.05em] text-[var(--ink)] uppercase no-underline transition-colors duration-[180ms] hover:bg-[var(--paper-deep)] hover:text-[var(--cobalt)] focus-visible:bg-[var(--paper-deep)] focus-visible:text-[var(--cobalt)] aria-[current=page]:bg-[var(--selection-surface)] aria-[current=page]:text-[var(--cobalt)] aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:decoration-[var(--signal)] aria-[current=page]:underline-offset-[0.55rem] [&_svg]:size-4"
-                        href={href}
+                        href={href as Route}
                         aria-current={isActive ? "page" : undefined}
                         onClick={() => chooseDestination(item.activeKey)}
                       >

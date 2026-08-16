@@ -81,7 +81,7 @@ export default function Home() {
                     actionClass,
                     "bg-[var(--cobalt)] text-[var(--on-cobalt)] hover:bg-[var(--cobalt-dark)]",
                   )}
-                  href="#projects"
+                  href="/projects"
                 >
                   Explore my work <ArrowRight aria-hidden="true" />
                 </a>

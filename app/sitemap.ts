@@ -15,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.marcmansour.dev/projects",
+      lastModified: new Date("2026-08-16"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: "https://www.marcmansour.dev/contact",
       lastModified: new Date("2026-08-16"),
       changeFrequency: "yearly",
