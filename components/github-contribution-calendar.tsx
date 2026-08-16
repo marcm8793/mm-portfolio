@@ -18,6 +18,13 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import type { ActivityCalendar, ActivityCell } from "@/lib/github";
+import { cn } from "@/lib/utils";
+
+const activitySwatchClass =
+  "rounded-none border border-[var(--activity-cell-border)] bg-[var(--activity-empty)] data-[level=1]:bg-[var(--activity-low)] data-[level=2]:bg-[var(--activity-medium)] data-[level=3]:bg-[var(--activity-high)] data-[level=4]:bg-[var(--lime)]";
+
+const activityCellClass =
+  "m-0 size-[0.72rem] appearance-none rounded-none border border-[var(--activity-cell-border)] bg-[var(--activity-empty)] p-0 data-[level=1]:bg-[var(--activity-low)] data-[level=2]:bg-[var(--activity-medium)] data-[level=3]:bg-[var(--activity-high)] data-[level=4]:bg-[var(--lime)] data-[future=true]:border-dotted data-[future=true]:bg-transparent data-[outside-year=true]:invisible enabled:cursor-crosshair enabled:hover:border-[var(--cobalt)] enabled:focus-visible:relative enabled:focus-visible:z-2 enabled:focus-visible:outline-2 enabled:focus-visible:outline-offset-2 enabled:focus-visible:outline-[var(--cobalt)]";
 
 const monthFormatter = new Intl.DateTimeFormat("en", {
   month: "short",
@@ -210,16 +217,19 @@ export function GitHubContributionCalendar({
   }
 
   return (
-    <div className="activity-plot">
-      <div className="activity-plot-toolbar">
-        <p aria-live="polite">
-          <span>{selectedCalendar.year}</span>
+    <div className="flex min-w-0 flex-col justify-center overflow-hidden border-b border-[var(--cobalt)] px-[var(--page-gutter)] py-6 min-[641px]:border-r min-[641px]:border-b-0 min-[641px]:py-[1.4rem]">
+      <div className="mb-[0.85rem] flex min-w-0 items-center justify-between gap-4">
+        <p
+          className="m-0 font-mono [font-size:var(--type-micro)] tracking-[0.04em] text-[var(--ink-muted)] uppercase"
+          aria-live="polite"
+        >
+          <span className="font-[650] text-[var(--ink)]">{selectedCalendar.year}</span>
           {isCurrentYear ? " · year to date" : " · full year"}
         </p>
 
         <DropdownMenu>
           <DropdownMenuTrigger
-            className="activity-year-trigger"
+            className="inline-flex min-h-11 min-w-[8.5rem] shrink-0 items-center justify-between gap-[0.65rem] rounded-[2px] border border-[var(--cobalt)] bg-[var(--control-surface)] px-[0.7rem] font-mono [font-size:var(--type-micro)] tracking-[0.04em] text-[var(--cobalt)] uppercase transition-colors duration-[140ms] hover:bg-[var(--paper-raised)] hover:text-[var(--cobalt-dark)] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--cobalt)] data-popup-open:bg-[var(--paper-raised)] data-popup-open:text-[var(--cobalt-dark)] [&_strong]:[font-size:var(--type-label)] [&_strong]:font-[650] [&_strong]:text-[var(--ink)] [&_svg]:size-[0.9rem]"
             aria-label={`Select contribution year. Current selection: ${selectedCalendar.year}`}
           >
             <span>Year</span>
@@ -229,7 +239,7 @@ export function GitHubContributionCalendar({
           <DropdownMenuContent
             align="end"
             sideOffset={5}
-            className="activity-year-menu"
+            className="w-60 min-w-60 rounded-[2px] border border-[var(--cobalt)] bg-[var(--paper-raised)] bg-[url('/paper-texture.webp')] p-[0.3rem] [background-blend-mode:var(--paper-texture-blend)] [background-size:620px] font-mono text-[var(--ink)] shadow-[4px_7px_18px_var(--shadow-medium)] [&_[data-slot=dropdown-menu-label]]:border-b [&_[data-slot=dropdown-menu-label]]:border-[var(--rule-soft)] [&_[data-slot=dropdown-menu-label]]:px-[0.6rem] [&_[data-slot=dropdown-menu-label]]:py-[0.55rem] [&_[data-slot=dropdown-menu-label]]:[font-size:var(--type-micro)] [&_[data-slot=dropdown-menu-label]]:font-[650] [&_[data-slot=dropdown-menu-label]]:tracking-[0.05em] [&_[data-slot=dropdown-menu-label]]:text-[var(--cobalt)] [&_[data-slot=dropdown-menu-label]]:uppercase"
           >
             <DropdownMenuRadioGroup value={selectedYear} onValueChange={selectYear}>
               <DropdownMenuLabel>Contribution year</DropdownMenuLabel>
@@ -237,7 +247,7 @@ export function GitHubContributionCalendar({
                 <DropdownMenuRadioItem
                   value={String(calendar.year)}
                   closeOnClick
-                  className="activity-year-option"
+                  className="grid min-h-11 grid-cols-[3rem_minmax(0,1fr)] gap-[0.7rem] rounded-[1px] py-[0.55rem] pr-[1.9rem] pl-[0.6rem] [font-size:var(--type-label)] focus:bg-[var(--lime-soft)] focus:text-[var(--ink)] data-checked:bg-[var(--lime-soft)] data-checked:text-[var(--ink)] [&_small]:overflow-hidden [&_small]:text-right [&_small]:text-ellipsis [&_small]:whitespace-nowrap [&_small]:[font-size:var(--type-micro)] [&_small]:text-[var(--ink-muted)] focus:[&_small]:text-[var(--ink)] data-checked:[&_small]:text-[var(--ink)]"
                   key={calendar.year}
                 >
                   <span>{calendar.year}</span>
@@ -255,16 +265,22 @@ export function GitHubContributionCalendar({
         {gridSummary} Use arrow keys to inspect adjacent days.
       </p>
 
-      <div className="activity-calendar-scroll">
-        <div className="activity-calendar-frame">
-          <div className="activity-day-labels" aria-hidden="true">
+      <div className="w-full overflow-x-auto [overscroll-behavior-inline:contain] [scrollbar-color:var(--cobalt)_var(--paper-deep)] [scrollbar-width:thin]">
+        <div className="grid w-max min-w-full grid-cols-[1.6rem_max-content] gap-2">
+          <div
+            className="grid grid-rows-[repeat(7,0.72rem)] gap-1 pt-[1.14rem] font-mono [font-size:var(--type-diagram)] leading-[0.72rem] text-[var(--ink-muted)] uppercase [&>span:nth-child(1)]:row-start-2 [&>span:nth-child(2)]:row-start-4 [&>span:nth-child(3)]:row-start-6"
+            aria-hidden="true"
+          >
             <span>Mon</span>
             <span>Wed</span>
             <span>Fri</span>
           </div>
 
-          <div className="activity-calendar-axis">
-            <div className="activity-months" aria-hidden="true">
+          <div className="w-max">
+            <div
+              className="mb-[0.45rem] grid w-max grid-cols-[repeat(53,0.72rem)] gap-1 font-mono [font-size:var(--type-micro)] text-[var(--ink-muted)] uppercase [&_span]:whitespace-nowrap"
+              aria-hidden="true"
+            >
               {monthLabels.map((month) => (
                 <span
                   style={{ gridColumn: month.column }}
@@ -277,14 +293,14 @@ export function GitHubContributionCalendar({
 
             <TooltipProvider delay={0}>
               <div
-                className="activity-grid"
+                className="grid w-max auto-cols-[0.72rem] grid-flow-col grid-rows-[repeat(7,0.72rem)] gap-1"
                 role="group"
                 aria-describedby="activity-grid-summary"
               >
                 {selectedCalendar.cells.map((cell, index) =>
                   cell.outsideYear ? (
                     <span
-                      className="activity-cell"
+                      className={activityCellClass}
                       data-outside-year="true"
                       key={cell.date}
                       aria-hidden="true"
@@ -293,7 +309,7 @@ export function GitHubContributionCalendar({
                     <Tooltip key={cell.date}>
                       <TooltipTrigger
                         type="button"
-                        className="activity-cell"
+                        className={activityCellClass}
                         data-cell-index={index}
                         data-level={cell.level}
                         data-future={cell.future || undefined}
@@ -302,7 +318,10 @@ export function GitHubContributionCalendar({
                         onFocus={() => setFocusDate(cell.date)}
                         onKeyDown={(event) => moveCellFocus(event, index)}
                       />
-                      <TooltipContent className="activity-tooltip" sideOffset={8}>
+                      <TooltipContent
+                        className="min-h-8 whitespace-nowrap rounded-[2px] border border-[var(--cobalt)] bg-[var(--paper-raised)] px-[0.6rem] py-[0.45rem] font-mono [font-size:var(--type-micro)] leading-[1.35] text-[var(--ink)] shadow-[3px_5px_14px_var(--shadow-tooltip)] [&>svg]:fill-[var(--cobalt)] [&>svg]:bg-[var(--cobalt)]"
+                        sideOffset={8}
+                      >
                         {tooltipLabel(cell.date, cell.count, cell.future)}
                       </TooltipContent>
                     </Tooltip>
@@ -314,24 +333,48 @@ export function GitHubContributionCalendar({
         </div>
       </div>
 
-      <div className="activity-legend" aria-hidden="true">
+      <div
+        className="mt-[0.6rem] flex w-max items-center gap-[0.28rem] self-end font-mono [font-size:var(--type-micro)] text-[var(--ink-muted)]"
+        aria-hidden="true"
+      >
         <span>Less</span>
         {[0, 1, 2, 3, 4].map((level) => (
-          <i data-level={level} key={level} />
+          <i
+            className={cn(activitySwatchClass, "size-[0.62rem]")}
+            data-level={level}
+            key={level}
+          />
         ))}
         <span>More</span>
       </div>
 
       <dl
-        className="activity-year-facts"
+        className="mt-4 mb-0 grid min-w-0 grid-cols-2 border-y border-[var(--rule-soft)] min-[641px]:grid-cols-4"
         aria-label={`${selectedCalendar.year} contribution summary`}
       >
-        {yearSummary.facts.map((fact) => (
-          <div className="activity-year-fact" key={fact.label}>
-            <dt>{fact.label}</dt>
-            <dd>
-              <strong>{fact.value}</strong>
-              <span>{fact.detail}</span>
+        {yearSummary.facts.map((fact, index) => (
+          <div
+            className={cn(
+              "min-w-0 px-[clamp(0.7rem,1.3vw,1.15rem)] py-[0.8rem]",
+              index === 0
+                ? "border-l-0"
+                : index === 2
+                  ? "border-l-0 min-[641px]:border-l min-[641px]:border-[var(--rule-soft)]"
+                  : "border-l border-[var(--rule-soft)]",
+              index >= 2 && "border-t border-[var(--rule-soft)] min-[641px]:border-t-0",
+            )}
+            key={fact.label}
+          >
+            <dt className="font-mono [font-size:var(--type-micro)] tracking-[0.05em] text-[var(--ink-muted)] uppercase">
+              {fact.label}
+            </dt>
+            <dd className="mt-[0.7rem] mb-0 flex min-w-0 flex-col gap-1">
+              <strong className="overflow-hidden text-ellipsis whitespace-nowrap font-mono text-[clamp(1.05rem,1.7vw,1.35rem)] leading-none font-[650] tracking-[-0.02em] text-[var(--ink)]">
+                {fact.value}
+              </strong>
+              <span className="overflow-hidden text-ellipsis whitespace-nowrap font-mono [font-size:var(--type-micro)] leading-[1.3] text-[var(--ink-muted)]">
+                {fact.detail}
+              </span>
             </dd>
           </div>
         ))}

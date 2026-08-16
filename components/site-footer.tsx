@@ -34,17 +34,28 @@ async function CurrentYear() {
 
 export function SiteFooter() {
   return (
-    <footer className="site-footer" id="contact">
-      <div className="footer-invitation">
-        <h2>Have a financial tool worth making clearer?</h2>
-        <a href={publicProfile.email.url}>Start a conversation</a>
+    <footer id="contact" className="scroll-mt-[5.9rem] min-[901px]:scroll-mt-6">
+      <div className="grid grid-cols-1 items-start gap-12 border-b border-[var(--cobalt)] px-[1.7rem] py-20 min-[641px]:px-[var(--page-gutter)] min-[641px]:py-[clamp(4.5rem,8vw,8rem)] min-[901px]:grid-cols-[minmax(0,1fr)_auto] min-[901px]:items-end">
+        <h2 className="m-0 max-w-[16ch] font-serif text-[clamp(3.3rem,15vw,4.5rem)] leading-[0.98] font-semibold tracking-[-0.025em] min-[641px]:text-[clamp(3.1rem,5.5vw,5.5rem)]">
+          Have a financial tool worth making clearer?
+        </h2>
+        <a
+          className="inline-flex min-h-[3.55rem] items-center justify-self-start border border-[var(--cobalt)] bg-[var(--cobalt)] px-[1.3rem] py-[0.85rem] font-mono [font-size:var(--type-label)] text-[var(--on-cobalt)] no-underline hover:bg-[var(--cobalt-dark)]"
+          href={publicProfile.email.url}
+        >
+          Start a conversation
+        </a>
       </div>
-      <div className="footer-index">
-        <p>Marc Mansour · Finance × software</p>
-        <ul aria-label="Contact links">
+      <div className="grid min-h-24 grid-cols-[1fr_auto] items-center gap-8 bg-[var(--footer-bg)] px-[1.7rem] py-5 font-mono [font-size:var(--type-micro)] tracking-[0.04em] text-[var(--footer-ink)] uppercase min-[641px]:grid-cols-[1fr_auto_auto] min-[641px]:px-[var(--page-gutter)] min-[641px]:py-[1.1rem] min-[901px]:grid-cols-[1fr_auto_auto_auto]">
+        <p className="col-start-1 row-start-1 m-0">Marc Mansour · Finance × software</p>
+        <ul
+          className="col-span-full row-start-2 m-0 grid w-full list-none grid-cols-2 gap-[0.45rem] p-0 min-[641px]:flex min-[641px]:justify-start min-[901px]:col-auto min-[901px]:row-auto"
+          aria-label="Contact links"
+        >
           {contactLinks.map(({ label, href, icon: Icon }) => (
             <li key={label}>
               <a
+                className="inline-flex min-h-[2.7rem] min-w-[2.7rem] items-center justify-start gap-[0.45rem] border border-[var(--footer-rule)] px-[0.65rem] py-[0.55rem] text-[var(--footer-ink)] no-underline transition-[border-color,background-color] duration-[180ms] hover:border-[var(--lime)] hover:bg-[var(--footer-hover)] min-[641px]:justify-center [&_svg]:size-[1.1rem]"
                 href={href}
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
                 rel={href.startsWith("mailto:") ? undefined : "me noopener noreferrer"}
@@ -56,7 +67,7 @@ export function SiteFooter() {
           ))}
         </ul>
         <ThemeSwitcher />
-        <p>
+        <p className="col-start-2 row-start-1 m-0 min-[641px]:col-start-3 min-[901px]:col-auto min-[901px]:row-auto">
           © <CurrentYear /> Marc Mansour
         </p>
       </div>

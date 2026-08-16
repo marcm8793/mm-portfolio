@@ -2,6 +2,15 @@ const githubUsername = "marcm8793";
 const emailAddress = "marcmansour@outlook.fr";
 
 export const publicProfile = {
+  site: {
+    url: "https://www.marcmansour.dev",
+  },
+  blog: {
+    url: "https://www.marcmansour.dev/blog",
+  },
+  resume: {
+    url: "https://www.marcmansour.dev/CVMM-dev-en.pdf",
+  },
   linkedin: {
     url: "https://www.linkedin.com/in/marc-mansour2142/",
   },

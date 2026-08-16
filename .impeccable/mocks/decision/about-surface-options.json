@@ -1,0 +1,48 @@
+{
+  "title": "Choose the About page structure",
+  "question": "Each direction keeps the Activity Ledger visual system and the same factual story. Choose how the story should unfold.",
+  "options": [
+    {
+      "id": "working-dossier",
+      "label": "The Working Dossier",
+      "kicker": "THE ROLL",
+      "lineage": "The portfolio's clipped case files and analyst working papers",
+      "thesis": "A personal case file that moves from present role to the questions behind the work.",
+      "palette": ["#f3f3ed", "#0f1b2b", "#2563b8", "#b7ed3d", "#db3947"],
+      "materials": ["ruled paper", "dossier tabs", "proof marks"],
+      "viewport": "A decisive opening statement leads into four compact evidence leaves: banking, technical pressure, software, and public work.",
+      "risk": "It needs disciplined copy lengths so the dossier feels human, not bureaucratic.",
+      "comp": ".impeccable/mocks/decision/about-working-dossier.webp"
+    },
+    {
+      "id": "decision-register",
+      "label": "The Decision Register",
+      "lineage": "A dated investment memo translated into a public biography",
+      "thesis": "The story reads as a sequence of decisions rather than a conventional biography.",
+      "palette": ["#f3f3ed", "#0f1b2b", "#2563b8", "#b7ed3d", "#db3947"],
+      "materials": ["numbered entries", "ledger rules", "margin annotations"],
+      "viewport": "A short lead is followed by numbered moments: finance context, recurring technical friction, building with code, and publishing the work.",
+      "risk": "The sequence can feel too chronological if the entries lose their present-day relevance.",
+      "comp": ".impeccable/mocks/decision/about-decision-register.webp"
+    },
+    {
+      "id": "double-entry",
+      "label": "Double-Entry Biography",
+      "lineage": "Bookkeeping columns recast as two sides of one practice",
+      "thesis": "Finance and software run in parallel columns, then reconcile in Marc’s projects and writing.",
+      "palette": ["#f3f3ed", "#0f1b2b", "#2563b8", "#b7ed3d", "#db3947"],
+      "materials": ["paired columns", "reconciliation lines", "carbon annotations"],
+      "viewport": "Two equal rails compare what finance asks with what software makes testable before converging on Savyy, the blog, and contact.",
+      "risk": "The metaphor must stay subtle or it can turn the person into an accounting diagram.",
+      "comp": ".impeccable/mocks/decision/about-double-entry-biography.webp"
+    }
+  ],
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "steer": true
+}
