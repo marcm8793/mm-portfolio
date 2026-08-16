@@ -3,6 +3,7 @@ import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr/ArrowUpRight";
 import { FilePdf } from "@phosphor-icons/react/dist/ssr/FilePdf";
 import { Paperclip } from "@phosphor-icons/react/dist/ssr/Paperclip";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -144,15 +145,15 @@ export default function AboutPage() {
               Questions in. Working answers out.
             </p>
             <div className="flex flex-wrap gap-[0.65rem] min-[901px]:flex-nowrap">
-              <a
+              <Link
                 className={cn(
                   actionBase,
                   "bg-[var(--cobalt)] text-[var(--on-cobalt)] hover:bg-[var(--cobalt-dark)]",
                 )}
-                href={publicProfile.email.url}
+                href="/contact"
               >
                 Start a conversation <ArrowRight aria-hidden="true" />
-              </a>
+              </Link>
               <a
                 className={cn(
                   actionBase,

@@ -3,6 +3,7 @@ import { GithubLogo } from "@phosphor-icons/react/dist/ssr/GithubLogo";
 import { LinkedinLogo } from "@phosphor-icons/react/dist/ssr/LinkedinLogo";
 import { XLogo } from "@phosphor-icons/react/dist/ssr/XLogo";
 import { cacheLife } from "next/cache";
+import Link from "next/link";
 
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { publicProfile } from "@/lib/public-profile";
@@ -39,12 +40,12 @@ export function SiteFooter() {
         <h2 className="m-0 max-w-[16ch] font-serif text-[clamp(3.3rem,15vw,4.5rem)] leading-[0.98] font-semibold tracking-[-0.025em] min-[641px]:text-[clamp(3.1rem,5.5vw,5.5rem)]">
           Have a financial tool worth making clearer?
         </h2>
-        <a
+        <Link
           className="inline-flex min-h-[3.55rem] items-center justify-self-start border border-[var(--cobalt)] bg-[var(--cobalt)] px-[1.3rem] py-[0.85rem] font-mono [font-size:var(--type-label)] text-[var(--on-cobalt)] no-underline hover:bg-[var(--cobalt-dark)]"
-          href={publicProfile.email.url}
+          href="/contact"
         >
           Start a conversation
-        </a>
+        </Link>
       </div>
       <div className="grid min-h-24 grid-cols-[1fr_auto] items-center gap-8 bg-[var(--footer-bg)] px-[1.7rem] py-5 font-mono [font-size:var(--type-micro)] tracking-[0.04em] text-[var(--footer-ink)] uppercase min-[641px]:grid-cols-[1fr_auto_auto] min-[641px]:px-[var(--page-gutter)] min-[641px]:py-[1.1rem] min-[901px]:grid-cols-[1fr_auto_auto_auto]">
         <p className="col-start-1 row-start-1 m-0">Marc Mansour · Finance × software</p>

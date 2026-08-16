@@ -39,20 +39,24 @@ const navigation = [
   },
   {
     label: "Contact",
-    homeHref: "#contact",
-    awayHref: "/#contact",
-    activeKey: "#contact",
+    homeHref: "/contact",
+    awayHref: "/contact",
+    activeKey: "/contact",
   },
   { label: "Blog", homeHref: "#blog", awayHref: "/#blog", activeKey: "#blog" },
 ] as const;
 
 type SiteHeaderProps = {
-  activePage?: "home" | "about";
+  activePage?: "home" | "about" | "contact";
 };
 
 export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
   const [activeDestination, setActiveDestination] = useState(
-    activePage === "about" ? "/about" : "#home",
+    activePage === "about"
+      ? "/about"
+      : activePage === "contact"
+        ? "/contact"
+        : "#home",
   );
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -83,6 +87,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
   };
 
   const homeHref = activePage === "home" ? "#home" : "/#home";
+  const pageCode = activePage === "contact" ? "C" : activePage === "about" ? "B" : "A";
 
   return (
     <header className="sticky top-0 z-40 grid min-h-[4.6rem] grid-cols-[minmax(0,1fr)_auto] border-b border-[var(--cobalt)] bg-[var(--header-surface-strong)] min-[901px]:relative min-[901px]:top-auto min-[901px]:z-20 min-[901px]:min-h-[4.8rem] min-[901px]:grid-cols-[15rem_1fr] min-[901px]:bg-[var(--header-surface)] min-[1181px]:grid-cols-[minmax(15rem,0.92fr)_minmax(40rem,2.2fr)_8.75rem]">
@@ -130,7 +135,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
         <span>Book</span>
         <strong>01</strong>
         <span>Page</span>
-        <strong>A</strong>
+        <strong>{pageCode}</strong>
       </div>
 
       <div className="flex min-[901px]:hidden">

@@ -205,7 +205,7 @@ The palette behaves like ink and notation on cool recycled stock: cobalt builds 
 
 ### Night Ledger
 
-Dark mode is a second working-paper composition, not an inversion. **Night Paper** (`#0b111b`), **Night Raised Stock** (`#111c2a`), and **Night Deep Stock** (`#192636`) create explicit surface depth; **Mineral Ink** (`#edf3f0`) and **Blueprint Cobalt** (`#78a8ff`) preserve the day theme’s hierarchy. Data Lime brightens to `#b9e84b`, Signal Red lifts to `#ff7d86`, and the financial case file keeps a warmer graphite folder so its physical-paper role remains legible. Texture blends with soft light instead of multiply, while the footer stays the deepest field in both modes.
+Dark mode is a second working-paper composition, not an inversion. **Night Paper** (`#0b111b`), **Night Raised Stock** (`#111c2a`), and **Night Deep Stock** (`#192636`) create explicit surface depth; **Mineral Ink** (`#edf3f0`) and **Blueprint Cobalt** (`#78a8ff`) preserve the day theme’s hierarchy. Data Lime brightens to `#b9e84b`, Signal Red lifts to `#ff7d86`, and the financial case file keeps a warmer graphite folder so its physical-paper role remains legible. Light paper bitmaps blend with multiply in dark mode so their white stock stays neutral instead of washing dark surfaces toward gray; the footer stays the deepest field in both modes.
 
 ### Named Rules
 
@@ -216,6 +216,8 @@ Dark mode is a second working-paper composition, not an inversion. **Night Paper
 **The Data-Is-Sparse Rule.** Reserve lime for measured activity, chart guidance, selection, and exceptional contact hover—not broad brand fills.
 
 **The Night-Ledger Rule.** Remap semantic roles for dark mode—canvas, raised stock, ink, ruling, data, and proof—rather than inverting rendered colors or introducing a generic black dashboard.
+
+**The Dark-Texture Rule.** Any light paper bitmap used over a translucent ledger surface receives an opaque Night Raised Stock wash before blending. Texture may add grain in dark mode; it may never lift the working surface into gray.
 
 ## Typography
 

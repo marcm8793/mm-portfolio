@@ -1,0 +1,81 @@
+{
+  "title": "Choose the Contact page composition",
+  "question": "All three keep the Activity Ledger identity, the same three-field task, and the same Resend flow. Choose the structure that should carry the conversation.",
+  "options": [
+    {
+      "id": "registered-dispatch",
+      "label": "Registered Dispatch",
+      "kicker": "THE ROLL",
+      "lineage": "registered-mail docket and detachable receipt",
+      "thesis": "A message becomes a traceable dispatch assembled in public, then resolves into a delivery receipt.",
+      "palette": [
+        "#f4f7f5",
+        "#174ea6",
+        "#101828",
+        "#9fd818",
+        "#c8313b"
+      ],
+      "materials": [
+        "ruled recycled stock",
+        "perforated receipt edge",
+        "cobalt registration ink"
+      ],
+      "viewport": "A broad dispatch docket spans the first viewport: three numbered entry bands on the left, a fixed delivery register to marc@mansour.contact on the right, and a send control embedded in the detachable receipt strip.",
+      "risk": "The postal metaphor must stay subordinate to fast form completion.",
+      "comp": ".impeccable/mocks/decision/contact-registered-dispatch.webp"
+    },
+    {
+      "id": "correspondence-desk",
+      "label": "Correspondence Desk",
+      "lineage": "clipped working letter beside an analyst's index",
+      "thesis": "The invitation and the message sheet share one desk, making the human exchange immediate and calm.",
+      "palette": [
+        "#f4f7f5",
+        "#fbfcfa",
+        "#174ea6",
+        "#101828",
+        "#9fd818"
+      ],
+      "materials": [
+        "clipped letter sheet",
+        "ledger index rail",
+        "paper overlap"
+      ],
+      "viewport": "A large left-hand invitation and compact contact facts balance a clipped three-field letter sheet on the right; successful submission replaces the sheet with a filed confirmation slip.",
+      "risk": "The familiar split composition could feel conventional if the paper object lacks physical conviction.",
+      "comp": ".impeccable/mocks/decision/contact-correspondence-desk.webp"
+    },
+    {
+      "id": "three-line-ledger",
+      "label": "Three-Line Ledger",
+      "lineage": "full-width accounting folio with ruled entry rows",
+      "thesis": "Name, address, and message become the only three entries in an oversized public ledger.",
+      "palette": [
+        "#f4f7f5",
+        "#e7ece9",
+        "#174ea6",
+        "#435164",
+        "#c8313b"
+      ],
+      "materials": [
+        "continuous ledger ruling",
+        "index numerals",
+        "single proof stamp"
+      ],
+      "viewport": "The page is one edge-to-edge form table: two concise rows for identity, one expansive writing row, and a final action register that shows recipient, privacy, and submission state without a separate card.",
+      "risk": "The extreme flatness demands immaculate spacing and focus treatment to remain inviting.",
+      "comp": ".impeccable/mocks/decision/contact-three-line-ledger.webp"
+    }
+  ],
+  "reroll": {
+    "registers": [
+      "safer",
+      "bolder"
+    ]
+  },
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "steer": true
+}

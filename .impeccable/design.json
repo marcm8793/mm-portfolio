@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-16T10:38:13Z",
+  "generatedAt": "2026-08-16T13:23:17Z",
   "title": "Design System: Marc Mansour Portfolio",
   "extensions": {
     "colorMeta": {
@@ -229,6 +229,7 @@
       { "name": "The Proof-Mark Rule", "body": "Signal red is one annotation, not a general accent system; use it once where review or proof is the meaning.", "section": "colors" },
       { "name": "The Data-Is-Sparse Rule", "body": "Reserve lime for measured activity, chart guidance, selection, and exceptional contact hover—not broad brand fills.", "section": "colors" },
       { "name": "The Night-Ledger Rule", "body": "Remap semantic roles for dark mode—canvas, raised stock, ink, ruling, data, and proof—rather than inverting rendered colors or introducing a generic black dashboard.", "section": "colors" },
+      { "name": "The Dark-Texture Rule", "body": "Place an opaque Night Raised Stock wash above light paper bitmaps on translucent ledger surfaces so texture adds grain without lifting the surface into gray.", "section": "colors" },
       { "name": "The Three-Voice Rule", "body": "Serif states the idea, sans explains it, and mono indexes or activates it; do not let one type voice impersonate another.", "section": "typography" },
       { "name": "The Working-Title Rule", "body": "Display copy reads like a decisive note in a research binder: short, asymmetric, sentence case, and never centered for ceremony.", "section": "typography" },
       { "name": "The Cross-Page Ledger Rule", "body": "Use continuous rules and shared alignment to connect sections; avoid isolated floating cards with independent gutters.", "section": "layout" },
@@ -249,6 +250,7 @@
       "Don't turn this world into a generic fintech dashboard, dark crypto interface, glowing-gradient landing page, or polished corporate deck.",
       "Don't use a centered hero, a bento grid, floating rounded cards, pill navigation, or soft shadow on every container.",
       "Don't replace paper texture and ruled geometry with glossy glass surfaces or decorative noise unrelated to working documents.",
+      "Don't blend a light paper bitmap directly over a translucent dark surface; wash it with Night Raised Stock first.",
       "Don't fabricate totals, performance metrics, outcomes, or proof; the visual system earns credibility through inspectable evidence.",
       "Don't hide primary content on mobile merely to preserve the desktop composition."
     ]

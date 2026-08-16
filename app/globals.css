@@ -61,6 +61,7 @@
   --tab-surface: rgba(251, 252, 250, 0.52);
   --action-surface: rgba(251, 252, 250, 0.62);
   --ledger-surface: rgba(251, 252, 250, 0.48);
+  --ledger-texture-wash: rgba(251, 252, 250, 0);
   --control-surface: rgba(251, 252, 250, 0.72);
   --dossier-surface: rgba(251, 252, 250, 0.56);
   --dossier-texture-wash: rgba(251, 252, 250, 0);
@@ -139,6 +140,7 @@
   --tab-surface: rgba(17, 28, 42, 0.68);
   --action-surface: rgba(17, 28, 42, 0.78);
   --ledger-surface: rgba(17, 28, 42, 0.52);
+  --ledger-texture-wash: rgba(17, 28, 42, 0.96);
   --control-surface: rgba(17, 28, 42, 0.82);
   --dossier-surface: rgba(17, 28, 42, 0.62);
   --dossier-texture-wash: rgba(17, 28, 42, 0.92);
@@ -160,7 +162,7 @@
   --footer-ink: #edf3f0;
   --footer-rule: rgba(237, 243, 240, 0.3);
   --footer-hover: rgba(237, 243, 240, 0.08);
-  --paper-texture-blend: soft-light;
+  --paper-texture-blend: multiply;
   --body-texture-blend: soft-light;
   --shadow-strong: rgba(0, 0, 0, 0.55);
   --shadow-medium: rgba(0, 0, 0, 0.42);
