@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 type SiteShellProps = {
-  activePage?: "home" | "projects" | "about" | "contact";
+  activePage?: "home" | "projects" | "about" | "resume" | "contact";
   children: ReactNode;
   showFooterCta?: boolean;
 };

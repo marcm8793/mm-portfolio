@@ -34,9 +34,9 @@ const navigation = [
   { label: "About", homeHref: "/about", awayHref: "/about", activeKey: "/about" },
   {
     label: "Resume",
-    homeHref: "#resume",
-    awayHref: "/#resume",
-    activeKey: "#resume",
+    homeHref: "/cv",
+    awayHref: "/cv",
+    activeKey: "/cv",
   },
   {
     label: "Contact",
@@ -48,7 +48,7 @@ const navigation = [
 ] as const;
 
 type SiteHeaderProps = {
-  activePage?: "home" | "projects" | "about" | "contact";
+  activePage?: "home" | "projects" | "about" | "resume" | "contact";
 };
 
 export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
@@ -57,9 +57,11 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
       ? "/about"
       : activePage === "contact"
         ? "/contact"
-        : activePage === "projects"
-          ? "/projects"
-          : "#home",
+        : activePage === "resume"
+          ? "/cv"
+          : activePage === "projects"
+            ? "/projects"
+            : "#home",
   );
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -95,6 +97,8 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
       ? "C"
       : activePage === "about"
         ? "B"
+        : activePage === "resume"
+          ? "R"
         : activePage === "projects"
           ? "P"
           : "A";

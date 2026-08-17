@@ -180,14 +180,12 @@ export default function Home() {
               <h2 className={indexTitleClass}>Experience &amp; tools.</h2>
               <p className={indexCopyClass}>A concise record of how the work gets done.</p>
             </div>
-            <a
+            <Link
               className={indexLinkClass}
-              href={publicProfile.resume.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/cv"
             >
-              <FilePdf aria-hidden="true" /> Open résumé
-            </a>
+              <FilePdf aria-hidden="true" /> View résumé
+            </Link>
           </article>
 
           <article className={cn(indexRowClass, "border-b-0")} id="blog">
