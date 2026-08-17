@@ -119,7 +119,7 @@ export function ContactDispatch({
 
   return (
     <section
-      className="relative mx-[0.8rem] my-5 overflow-hidden border border-[var(--cobalt)] bg-[var(--ledger-surface)] [background-blend-mode:normal,normal,var(--paper-texture-blend)] [background-image:repeating-linear-gradient(to_bottom,transparent_0,transparent_31px,var(--rule-faint)_31px,var(--rule-faint)_32px),linear-gradient(var(--ledger-texture-wash),var(--ledger-texture-wash)),url('/paper-texture.webp')] [background-size:auto,auto,720px_720px] min-[641px]:mx-5 min-[641px]:my-6 min-[1000px]:grid min-[1000px]:min-h-[calc(100svh-7.85rem)] min-[1000px]:grid-cols-[minmax(0,2.15fr)_minmax(19rem,0.85fr)]"
+      className="relative mx-[0.8rem] my-5 overflow-hidden border border-[var(--cobalt)] bg-[var(--ledger-surface)] [background-blend-mode:normal,normal,var(--paper-texture-blend)] [background-image:repeating-linear-gradient(to_bottom,transparent_0,transparent_31px,var(--rule-faint)_31px,var(--rule-faint)_32px),linear-gradient(var(--ledger-texture-wash),var(--ledger-texture-wash)),url('/paper-texture.webp')] [background-size:auto,auto,720px_720px] min-[641px]:mx-5 min-[641px]:my-6 min-[1000px]:grid min-[1000px]:grid-cols-[minmax(0,2.15fr)_minmax(18rem,0.85fr)]"
       aria-labelledby="contact-title"
     >
       <div className="min-w-0">
@@ -138,9 +138,9 @@ export function ContactDispatch({
           </dl>
         </div>
 
-        <div className="px-[1.7rem] pt-[clamp(3.5rem,7vw,6.25rem)] pb-12 min-[641px]:px-[clamp(2rem,4vw,4.2rem)]">
+        <div className="px-[1.7rem] pt-[clamp(3rem,5vw,4.5rem)] pb-12 min-[641px]:px-[clamp(2rem,4vw,3.25rem)]">
           <h1
-            className="m-0 max-w-[12ch] font-serif text-[clamp(3.5rem,13vw,4.5rem)] leading-[0.94] font-semibold tracking-[-0.03em] min-[641px]:text-[clamp(4.25rem,5.6vw,5.15rem)]"
+            className="m-0 max-w-[18ch] font-serif text-[clamp(2.5rem,9vw,3rem)] leading-[1.02] font-medium tracking-[-0.025em] min-[641px]:text-[var(--type-display)]"
             id="contact-title"
           >
             Send a note.
@@ -152,7 +152,7 @@ export function ContactDispatch({
 
           <form
             action={formAction}
-            className="relative mt-8 max-w-[49rem]"
+            className="relative mt-8 max-w-[44rem]"
             noValidate
             ref={formRef}
           >

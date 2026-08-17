@@ -77,7 +77,7 @@ function WealthRing() {
 
 export function SavyyProductSpecimen() {
   return (
-    <figure className="relative m-0 min-h-[31rem] overflow-hidden bg-[#090d14] [--specimen-accent:#8ab4ff] [--specimen-muted:#a9b1c1] min-[641px]:min-h-[38rem] min-[901px]:min-h-0">
+    <figure className="relative m-0 min-h-[27rem] overflow-hidden bg-[#090d14] [--specimen-accent:#8ab4ff] [--specimen-muted:#a9b1c1] min-[641px]:min-h-[31rem]">
       <figcaption className="absolute top-5 right-6 left-6 z-20 flex items-center justify-between gap-6 font-mono text-[0.6875rem] tracking-[0.07em] text-[var(--specimen-accent)] uppercase min-[641px]:top-7 min-[641px]:right-10 min-[641px]:left-10">
         <span>Savyy</span>
         <span>Web + mobile</span>

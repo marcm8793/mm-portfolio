@@ -100,9 +100,9 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
           : "A";
 
   return (
-    <header className="sticky top-0 z-40 grid min-h-[4.6rem] grid-cols-[minmax(0,1fr)_auto] border-b border-[var(--cobalt)] bg-[var(--header-surface-strong)] min-[901px]:relative min-[901px]:top-auto min-[901px]:z-20 min-[901px]:min-h-[4.8rem] min-[901px]:grid-cols-[15rem_1fr] min-[901px]:bg-[var(--header-surface)] min-[1181px]:grid-cols-[minmax(15rem,0.92fr)_minmax(40rem,2.2fr)_8.75rem]">
+    <header className="sticky top-0 z-40 grid min-h-[4.6rem] grid-cols-[minmax(0,1fr)_auto] border-b border-[var(--cobalt)] bg-[var(--header-surface-strong)] min-[901px]:h-svh min-[901px]:min-h-0 min-[901px]:grid-cols-1 min-[901px]:grid-rows-[auto_1fr_auto] min-[901px]:border-b-0 min-[901px]:bg-[var(--header-surface)]">
       <Link
-        className="flex min-h-[4.6rem] items-center pr-6 pl-[1.6rem] font-mono text-[clamp(1.0625rem,1.6vw,1.3125rem)] leading-none font-bold tracking-[0.065em] text-[var(--ink)] no-underline min-[641px]:pl-[var(--page-gutter)] min-[901px]:min-h-0"
+        className="flex min-h-[4.6rem] items-center pr-6 pl-[1.6rem] font-mono text-[clamp(1.0625rem,1.6vw,1.3125rem)] leading-none font-bold tracking-[0.065em] text-[var(--ink)] no-underline min-[641px]:pl-[var(--page-gutter)] min-[901px]:min-h-[5.5rem] min-[901px]:border-b min-[901px]:border-[var(--cobalt)] min-[901px]:px-5 min-[901px]:text-[0.9rem] min-[901px]:leading-[1.25]"
         href={homeHref}
         aria-label="Marc Mansour, home"
         onClick={() => chooseDestination("#home")}
@@ -111,10 +111,10 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
       </Link>
 
       <NavigationMenu
-        className="hidden w-full min-w-0 max-w-none min-[901px]:flex min-[901px]:pr-2.5 min-[1181px]:pr-0"
+        className="hidden w-full min-w-0 max-w-none min-[901px]:flex min-[901px]:items-start"
         aria-label="Primary navigation"
       >
-        <NavigationMenuList className="m-0 grid h-full w-full grid-cols-[repeat(6,minmax(6rem,1fr))] list-none p-0 [&>li]:min-w-0">
+        <NavigationMenuList className="m-0 grid h-auto w-full grid-cols-1 list-none p-0 [&>li]:min-w-0">
           {navigation.map((item, index) => {
             const href = activePage === "home" ? item.homeHref : item.awayHref;
             const isActive = activeDestination === item.activeKey;
@@ -123,14 +123,16 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
               <NavigationMenuItem key={item.label}>
                 <Link
                   className={cn(
-                    "relative flex h-full min-h-[4.8rem] items-center justify-center rounded-none border-t border-l border-[var(--rule-soft)] border-t-[var(--cobalt)] bg-[var(--tab-surface)] p-0 font-mono [font-size:var(--type-label)] tracking-[0.05em] text-[var(--ink)] uppercase no-underline transition-colors duration-[180ms] hover:bg-[var(--paper-raised)] hover:text-[var(--cobalt)] aria-[current=page]:font-bold aria-[current=page]:text-[var(--cobalt)] aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:decoration-[var(--signal)] aria-[current=page]:underline-offset-[0.85rem]",
-                    index === navigation.length - 1 && "border-r",
+                    "relative grid min-h-[4rem] grid-cols-[2.15rem_minmax(0,1fr)] items-center gap-2 border-b border-[var(--rule-soft)] bg-[var(--tab-surface)] px-4 font-mono [font-size:var(--type-label)] tracking-[0.04em] text-[var(--ink)] uppercase no-underline transition-colors duration-[180ms] hover:bg-[var(--paper-raised)] hover:text-[var(--cobalt)] aria-[current=page]:bg-[var(--selection-surface)] aria-[current=page]:font-bold aria-[current=page]:text-[var(--cobalt)] after:absolute after:bottom-0 after:left-4 after:h-0.5 after:w-0 after:bg-[var(--signal)] after:transition-[width] after:duration-[180ms] aria-[current=page]:after:w-5",
                   )}
                   href={href as Route}
                   aria-current={isActive ? "page" : undefined}
                   onClick={() => chooseDestination(item.activeKey)}
                 >
-                  {item.label}
+                  <span className="text-[var(--cobalt)]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span>{item.label}</span>
                 </Link>
               </NavigationMenuItem>
             );
@@ -139,7 +141,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
       </NavigationMenu>
 
       <div
-        className="hidden grid-cols-[1fr_auto] content-center gap-x-3 gap-y-[0.15rem] border-l border-[var(--cobalt)] px-4 py-[0.7rem] font-mono [font-size:var(--type-micro)] tracking-[0.055em] text-[var(--cobalt)] uppercase min-[1181px]:grid [&>strong]:font-serif [&>strong]:text-base [&>strong]:font-normal [&>strong]:italic"
+        className="hidden grid-cols-[1fr_auto] content-center gap-x-3 gap-y-[0.15rem] border-t border-[var(--cobalt)] px-4 py-5 font-mono [font-size:var(--type-micro)] tracking-[0.055em] text-[var(--cobalt)] uppercase min-[901px]:grid [&>strong]:font-serif [&>strong]:text-base [&>strong]:font-normal [&>strong]:italic"
         aria-hidden="true"
       >
         <span>Book</span>
@@ -180,7 +182,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
 
             <nav aria-label="Mobile navigation">
               <ul className="m-0 list-none p-0">
-                {navigation.map((item) => {
+                {navigation.map((item, index) => {
                   const href = activePage === "home" ? item.homeHref : item.awayHref;
                   const isActive = activeDestination === item.activeKey;
 
@@ -192,7 +194,12 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
                         aria-current={isActive ? "page" : undefined}
                         onClick={() => chooseDestination(item.activeKey)}
                       >
-                        <span>{item.label}</span>
+                        <span className="grid grid-cols-[2rem_1fr] gap-3">
+                          <span className="text-[var(--cobalt)]">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <span>{item.label}</span>
+                        </span>
                         <ArrowRightIcon aria-hidden="true" weight="bold" />
                       </Link>
                     </li>

@@ -217,7 +217,7 @@ export function GitHubContributionCalendar({
   }
 
   return (
-    <div className="flex min-w-0 flex-col justify-center overflow-hidden border-b border-[var(--cobalt)] px-[var(--page-gutter)] py-6 min-[641px]:border-r min-[641px]:border-b-0 min-[641px]:py-[1.4rem]">
+    <div className="flex min-w-0 flex-col justify-center overflow-hidden border-b border-[var(--cobalt)] px-5 py-6 min-[641px]:px-6 min-[641px]:py-[1.4rem]">
       <div className="mb-[0.85rem] flex min-w-0 items-center justify-between gap-4">
         <p
           className="m-0 font-mono [font-size:var(--type-micro)] tracking-[0.04em] text-[var(--ink-muted)] uppercase"

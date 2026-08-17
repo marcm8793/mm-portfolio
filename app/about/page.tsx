@@ -5,8 +5,7 @@ import { Paperclip } from "@phosphor-icons/react/dist/ssr/Paperclip";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
+import { SiteShell } from "@/components/site-shell";
 import { aboutDossier } from "@/lib/about";
 import { featuredProject } from "@/lib/projects";
 import { publicProfile } from "@/lib/public-profile";
@@ -48,27 +47,16 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="relative isolate mx-auto min-h-screen w-[min(100%,var(--content-width))] border-x-0 border-[var(--rule-soft)] bg-[var(--shell-surface)] before:pointer-events-none before:fixed before:top-0 before:bottom-0 before:left-[0.8rem] before:-z-10 before:w-px before:bg-[var(--margin-rule)] before:content-[''] min-[641px]:before:left-[1.1rem] min-[901px]:border-x min-[901px]:before:left-[max(1.15rem,calc((100vw-var(--content-width))/2+4rem))]">
+    <SiteShell activePage="about">
       <div
         hidden
         data-direction-contract="working-dossier"
         dangerouslySetInnerHTML={directionContractMarkup}
       />
-      <a
-        className="fixed top-3 left-3 z-100 -translate-y-[160%] border border-[var(--cobalt)] bg-[var(--paper-raised)] px-4 py-[0.7rem] font-mono [font-size:var(--type-label)] text-[var(--ink)] uppercase focus:translate-y-0"
-        href="#main-content"
-      >
-        Skip to content
-      </a>
-      <SiteHeader activePage="about" />
-
       <main className="overflow-clip" id="main-content">
-        <header className="relative grid min-h-[28.5rem] grid-cols-1 border-b border-[var(--cobalt)] min-[901px]:grid-cols-[minmax(0,1.2fr)_minmax(20rem,0.8fr)] min-[1181px]:grid-cols-[minmax(0,1.85fr)_minmax(21rem,0.65fr)]">
-          <div className="flex min-h-0 min-w-0 flex-col justify-center border-b border-[var(--cobalt)] [padding:5rem_1.7rem_4rem] min-[641px]:min-h-[34rem] min-[641px]:[padding:2.8rem_var(--page-gutter)_2.45rem] min-[901px]:min-h-0 min-[901px]:border-r min-[901px]:border-b-0">
-            <span className="mb-[1.15rem] font-mono [font-size:var(--type-control)] font-bold tracking-[0.075em] text-[var(--cobalt)] uppercase">
-              About / The working dossier
-            </span>
-            <h1 className="m-0 max-w-none text-pretty font-serif text-[clamp(3.4rem,15vw,4.5rem)] leading-[0.96] font-medium tracking-[-0.03em] min-[641px]:text-[clamp(3.55rem,4.7vw,4.65rem)]">
+        <header className="relative grid grid-cols-1 border-b border-[var(--cobalt)] min-[901px]:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.85fr)]">
+          <div className="flex min-w-0 flex-col justify-center border-b border-[var(--cobalt)] px-[1.7rem] py-[clamp(3.5rem,6vw,5rem)] min-[641px]:px-[var(--page-gutter)] min-[901px]:border-r min-[901px]:border-b-0">
+            <h1 className="m-0 max-w-[18ch] text-balance font-serif text-[clamp(2.25rem,8vw,2.75rem)] leading-[1.02] font-medium tracking-[-0.025em] min-[641px]:text-[var(--type-display)]">
               {aboutDossier.title}
             </h1>
             <p className="mt-[1.45rem] mb-0 max-w-[72ch] text-base leading-[1.6] text-[var(--ink-muted)] min-[641px]:[font-size:var(--type-body-lg)]">
@@ -78,7 +66,7 @@ export default function AboutPage() {
 
           <aside
             className={cn(
-              "relative isolate z-0 grid min-h-72 w-auto content-center self-center justify-self-auto border border-[var(--cobalt)] p-9 [margin:4rem_1.7rem] shadow-[0_20px_38px_-28px_var(--shadow-strong)] before:absolute before:-z-10 before:border before:border-[var(--case-stock-rule)] before:bg-[var(--case-stock)] before:shadow-[0_14px_28px_-24px_var(--shadow-medium)] before:content-[''] before:[inset:0.75rem_-0.75rem_-0.75rem_0.75rem] after:absolute after:top-[-1.1rem] after:right-[1.65rem] after:z-2 after:size-9 after:rotate-2 after:border after:bg-[var(--lime)] after:shadow-[0_3px_7px_var(--shadow-soft)] after:content-[''] after:[border-color:color-mix(in_srgb,var(--lime)_78%,var(--ink))] min-[641px]:mx-[var(--page-gutter)] min-[641px]:my-20 min-[641px]:min-h-[17.25rem] min-[641px]:w-[min(34rem,calc(100%_-_2_*_var(--page-gutter)))] min-[641px]:justify-self-center min-[641px]:[padding:2.35rem_2.2rem_2rem] min-[901px]:mx-10 min-[901px]:my-[2.6rem] min-[901px]:w-auto min-[901px]:justify-self-auto min-[1181px]:[margin:2.6rem_clamp(2rem,3vw,3.4rem)]",
+              "relative isolate z-0 grid min-h-64 w-auto content-center self-center justify-self-auto border border-[var(--cobalt)] p-8 [margin:3rem_1.7rem] shadow-[0_20px_38px_-28px_var(--shadow-strong)] before:absolute before:-z-10 before:border before:border-[var(--case-stock-rule)] before:bg-[var(--case-stock)] before:shadow-[0_14px_28px_-24px_var(--shadow-medium)] before:content-[''] before:[inset:0.75rem_-0.75rem_-0.75rem_0.75rem] after:absolute after:top-[-1.1rem] after:right-[1.65rem] after:z-2 after:size-9 after:rotate-2 after:border after:bg-[var(--lime)] after:shadow-[0_3px_7px_var(--shadow-soft)] after:content-[''] after:[border-color:color-mix(in_srgb,var(--lime)_78%,var(--ink))] min-[641px]:mx-[var(--page-gutter)] min-[641px]:my-12 min-[641px]:min-h-0 min-[641px]:w-[min(30rem,calc(100%_-_2_*_var(--page-gutter)))] min-[641px]:justify-self-center min-[641px]:[padding:2rem_1.8rem_1.75rem] min-[901px]:mx-8 min-[901px]:my-10 min-[901px]:w-auto min-[901px]:justify-self-auto",
               ruledSheet,
             )}
             aria-label="Current position"
@@ -90,7 +78,7 @@ export default function AboutPage() {
             <span className="border-b border-[var(--cobalt)] pb-[1.1rem] font-mono [font-size:var(--type-label)] tracking-[0.06em] text-[var(--cobalt)] uppercase">
               {aboutDossier.position.label}
             </span>
-            <strong className="mt-8 font-serif text-[clamp(2rem,2.5vw,2.65rem)] leading-[1.05] font-medium">
+            <strong className="mt-6 font-serif text-[clamp(1.75rem,2.5vw,2.25rem)] leading-[1.08] font-medium">
               {aboutDossier.position.value}
             </strong>
             <small className="mt-5 font-mono [font-size:var(--type-label)] tracking-[0.06em] text-[var(--ink-muted)] uppercase">
@@ -106,11 +94,11 @@ export default function AboutPage() {
           <h2 className="sr-only" id="about-story-title">
             From investment banking to public software work
           </h2>
-          <div className="grid grid-cols-1 items-start gap-[4.35rem] min-[641px]:grid-cols-2 min-[641px]:gap-x-4 min-[641px]:gap-y-[4.5rem] min-[1181px]:grid-cols-4 min-[1181px]:gap-[0.55rem]">
+          <div className="grid grid-cols-1 items-start gap-[4rem] min-[641px]:grid-cols-2 min-[641px]:gap-x-4 min-[641px]:gap-y-[4rem]">
             {aboutDossier.leaves.map((leaf) => (
               <article
                 className={cn(
-                  "relative flex min-h-96 min-w-0 flex-col border border-[var(--cobalt)] px-6 pt-9 pb-5 min-[641px]:min-h-[17.4rem] min-[641px]:px-[1.35rem]",
+                  "relative flex min-h-[17rem] min-w-0 flex-col border border-[var(--cobalt)] px-6 pt-9 pb-5 min-[641px]:min-h-[15rem] min-[641px]:px-[1.35rem]",
                   ruledLeaf,
                 )}
                 key={leaf.index}
@@ -179,11 +167,11 @@ export default function AboutPage() {
         </section>
 
         <section
-          className="grid grid-cols-1 gap-[clamp(3rem,8vw,9rem)] border-b border-[var(--cobalt)] px-[1.7rem] py-[clamp(6rem,10vw,10rem)] min-[641px]:px-[var(--page-gutter)] min-[901px]:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]"
+          className="grid grid-cols-1 gap-8 border-b border-[var(--cobalt)] px-[1.7rem] py-[clamp(3.75rem,6vw,5rem)] min-[641px]:px-[var(--page-gutter)] min-[901px]:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] min-[901px]:gap-12"
           aria-labelledby="about-practice-title"
         >
           <h2
-            className="m-0 max-w-[9ch] font-serif text-[clamp(3rem,13vw,4rem)] leading-[0.98] font-medium tracking-[-0.025em] min-[641px]:text-[clamp(3.1rem,5.2vw,5.25rem)]"
+            className="m-0 max-w-[16ch] text-balance font-serif text-[var(--type-section)] leading-[1.08] font-medium tracking-[-0.025em]"
             id="about-practice-title"
           >
             What I’m building now.
@@ -212,12 +200,12 @@ export default function AboutPage() {
         </section>
 
         <section
-          className="grid grid-cols-1 items-start gap-[clamp(3rem,7vw,8rem)] bg-[var(--ledger-surface)] px-[1.7rem] py-[clamp(5rem,8vw,8rem)] min-[641px]:px-[var(--page-gutter)] min-[901px]:grid-cols-[minmax(0,1fr)_auto] min-[901px]:items-end"
+          className="grid grid-cols-1 items-start gap-8 bg-[var(--ledger-surface)] px-[1.7rem] py-[clamp(3.5rem,6vw,4.75rem)] min-[641px]:px-[var(--page-gutter)]"
           aria-labelledby="about-closing-title"
         >
           <div>
             <h2
-              className="m-0 max-w-[12ch] font-serif text-[clamp(3rem,13vw,4rem)] leading-[0.98] font-medium tracking-[-0.025em] min-[641px]:text-[clamp(3.1rem,5.2vw,5.25rem)]"
+              className="m-0 max-w-[20ch] text-balance font-serif text-[var(--type-section)] leading-[1.08] font-medium tracking-[-0.025em]"
               id="about-closing-title"
             >
               Bring me a question worth testing.
@@ -229,7 +217,6 @@ export default function AboutPage() {
         </section>
       </main>
 
-      <SiteFooter />
-    </div>
+    </SiteShell>
   );
 }

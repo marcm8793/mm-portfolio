@@ -82,12 +82,12 @@ export function SavyyCaseStudy() {
         aria-labelledby="product-title"
       >
         <div className="grid min-[901px]:grid-cols-[minmax(20rem,0.82fr)_minmax(0,1.18fr)]">
-          <header className="border-b border-[var(--cobalt)] px-[1.7rem] py-16 min-[641px]:px-[var(--page-gutter)] min-[641px]:py-24 min-[901px]:border-r min-[901px]:border-b-0">
+          <header className="border-b border-[var(--cobalt)] px-[1.7rem] py-12 min-[641px]:px-[var(--page-gutter)] min-[641px]:py-16 min-[901px]:border-r min-[901px]:border-b-0">
             <div className="grid grid-cols-[2rem_minmax(0,1fr)] gap-5 min-[641px]:grid-cols-[2.5rem_minmax(0,1fr)] min-[641px]:gap-7">
               <SectionRail>01 / Product</SectionRail>
               <div>
                 <h2
-                  className="m-0 max-w-[10ch] font-serif text-[clamp(3.5rem,13vw,5.2rem)] leading-[0.96] font-semibold tracking-[-0.03em]"
+                  className="m-0 max-w-[16ch] text-balance font-serif text-[var(--type-section)] leading-[1.08] font-medium tracking-[-0.025em]"
                   id="product-title"
                 >
                   Built around a complete financial life.
@@ -104,14 +104,14 @@ export function SavyyCaseStudy() {
           <ol className="m-0 list-none p-0">
             {savyyProject.productAreas.map((area) => (
               <li
-                className="grid min-h-[13rem] grid-cols-[3.2rem_minmax(0,1fr)] gap-5 border-b border-[var(--rule-soft)] px-[1.7rem] py-10 last:border-b-0 min-[641px]:grid-cols-[4.5rem_minmax(0,1fr)] min-[641px]:px-[var(--page-gutter)] min-[641px]:py-12"
+                className="grid min-h-[10rem] grid-cols-[3.2rem_minmax(0,1fr)] gap-5 border-b border-[var(--rule-soft)] px-[1.7rem] py-8 last:border-b-0 min-[641px]:grid-cols-[4rem_minmax(0,1fr)] min-[641px]:px-[var(--page-gutter)]"
                 key={area.index}
               >
                 <span className="pt-1 font-mono [font-size:var(--type-label)] text-[var(--signal)]">
                   {area.index}
                 </span>
                 <div>
-                  <h3 className="m-0 font-serif text-[clamp(2rem,7vw,3.15rem)] leading-none font-semibold tracking-[-0.025em]">
+                  <h3 className="m-0 font-serif text-[clamp(1.75rem,4vw,2.35rem)] leading-[1.08] font-medium tracking-[-0.025em]">
                     {area.title}
                   </h3>
                   <p className="mt-5 mb-0 max-w-[43rem] leading-[1.7] text-[var(--ink-muted)]">
@@ -124,7 +124,7 @@ export function SavyyCaseStudy() {
         </div>
 
         <div className="grid border-t border-[var(--cobalt)] min-[901px]:grid-cols-[minmax(0,1.08fr)_minmax(22rem,0.92fr)]">
-          <figure className="relative m-0 min-h-[34rem] overflow-hidden bg-[#182947] min-[641px]:min-h-[48rem] min-[901px]:border-r">
+          <figure className="relative m-0 min-h-[30rem] overflow-hidden bg-[#182947] min-[641px]:min-h-[38rem] min-[901px]:border-r">
             <Image
               className="object-cover object-[50%_63%]"
               src="/savyy/ios-overview.jpg"
@@ -133,12 +133,12 @@ export function SavyyCaseStudy() {
               alt="Savyy mobile overview showing balances, cash flow, and wealth distribution"
             />
           </figure>
-          <div className="flex flex-col justify-between gap-12 px-[1.7rem] py-14 min-[641px]:px-[var(--page-gutter)] min-[641px]:py-20">
+          <div className="flex flex-col justify-between gap-10 px-[1.7rem] py-12 min-[641px]:px-[var(--page-gutter)] min-[641px]:py-16">
             <div>
               <p className="m-0 font-mono [font-size:var(--type-label)] tracking-[0.07em] text-[var(--cobalt)] uppercase">
                 Product judgment
               </p>
-              <blockquote className="mt-7 mb-0 max-w-[16ch] font-serif text-[clamp(2.7rem,8vw,4.8rem)] leading-[1.02] font-medium tracking-[-0.025em]">
+              <blockquote className="mt-6 mb-0 max-w-[20ch] text-balance font-serif text-[var(--type-section)] leading-[1.08] font-medium tracking-[-0.025em]">
                 “Useful finance software should leave the person in charge.”
               </blockquote>
               <p className="mt-8 mb-0 max-w-[38rem] leading-[1.75] text-[var(--ink-muted)]">
@@ -170,9 +170,9 @@ export function SavyyCaseStudy() {
           <div className="border-b border-[var(--cobalt)] px-[1.7rem] py-14 min-[641px]:px-[var(--page-gutter)] min-[901px]:border-r min-[901px]:border-b-0">
             <SectionIndex>02 / Ownership</SectionIndex>
           </div>
-          <div className="px-[1.7rem] py-14 min-[641px]:px-[var(--page-gutter)] min-[641px]:py-20">
+          <div className="px-[1.7rem] py-12 min-[641px]:px-[var(--page-gutter)] min-[641px]:py-16">
             <h2
-              className="m-0 max-w-[14ch] font-serif text-[clamp(3.4rem,12vw,6rem)] leading-[0.94] font-semibold tracking-[-0.03em]"
+              className="m-0 max-w-[18ch] text-balance font-serif text-[var(--type-section)] leading-[1.08] font-medium tracking-[-0.025em]"
               id="ownership-title"
             >
               Solo means the whole system.
@@ -188,31 +188,31 @@ export function SavyyCaseStudy() {
         <ol className="m-0 grid list-none p-0 min-[641px]:grid-cols-2">
           {savyyProject.ownership.map((area, index) => (
             <li
-              className="grid min-h-[8.75rem] grid-cols-[3rem_minmax(0,1fr)] items-start gap-5 border-b border-[var(--rule-soft)] px-[1.7rem] py-8 odd:min-[641px]:border-r min-[641px]:grid-cols-[4rem_minmax(0,1fr)] min-[641px]:px-[var(--page-gutter)] min-[641px]:py-10"
+              className="grid min-h-[7.5rem] grid-cols-[3rem_minmax(0,1fr)] items-start gap-5 border-b border-[var(--rule-soft)] px-[1.7rem] py-7 odd:min-[641px]:border-r min-[641px]:grid-cols-[4rem_minmax(0,1fr)] min-[641px]:px-[var(--page-gutter)]"
               key={area}
             >
               <span className="font-mono [font-size:var(--type-label)] text-[var(--signal)]">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <p className="m-0 max-w-[34rem] font-serif text-[clamp(1.55rem,4vw,2.25rem)] leading-[1.15] font-medium">
+              <p className="m-0 max-w-[34rem] font-serif text-[clamp(1.4rem,3vw,1.85rem)] leading-[1.2] font-medium">
                 {area}
               </p>
             </li>
           ))}
         </ol>
 
-        <div className="border-t border-[var(--cobalt)] px-[1.7rem] py-16 min-[641px]:px-[var(--page-gutter)] min-[641px]:py-24">
+        <div className="border-t border-[var(--cobalt)] px-[1.7rem] py-12 min-[641px]:px-[var(--page-gutter)] min-[641px]:py-16">
           <div className="grid gap-10 min-[901px]:grid-cols-[minmax(18rem,0.66fr)_minmax(0,1.34fr)] min-[901px]:gap-[clamp(4rem,8vw,9rem)]">
             <div className="grid grid-cols-[2rem_minmax(0,1fr)] gap-5 min-[641px]:grid-cols-[2.5rem_minmax(0,1fr)] min-[641px]:gap-7">
               <SectionRail>A connected path</SectionRail>
-              <h3 className="m-0 max-w-[9ch] font-serif text-[clamp(3.1rem,10vw,5.25rem)] leading-[0.96] font-semibold tracking-[-0.03em]">
+              <h3 className="m-0 max-w-[18ch] text-balance font-serif text-[var(--type-section)] leading-[1.08] font-medium tracking-[-0.025em]">
                 From consent to a useful screen.
               </h3>
             </div>
             <ol className="m-0 grid list-none border-t border-[var(--cobalt)] p-0 min-[641px]:grid-cols-2">
               {savyyProject.systemFlow.map((step) => (
                 <li
-                  className="min-h-[16rem] border-r border-b border-[var(--cobalt)] px-6 py-8 even:border-r-0 min-[641px]:px-8"
+                  className="min-h-[13rem] border-r border-b border-[var(--cobalt)] px-6 py-7 even:border-r-0 min-[641px]:px-8"
                   key={step.index}
                 >
                   <span className="font-mono [font-size:var(--type-label)] text-[var(--signal)]">
@@ -237,7 +237,7 @@ export function SavyyCaseStudy() {
         aria-labelledby="release-title"
       >
         <div className="grid min-[901px]:grid-cols-[minmax(0,1.08fr)_minmax(22rem,0.92fr)]">
-          <figure className="relative m-0 min-h-[37rem] overflow-hidden bg-[#182947] min-[641px]:min-h-[54rem] min-[901px]:border-r">
+          <figure className="relative m-0 min-h-[31rem] overflow-hidden bg-[#182947] min-[641px]:min-h-[40rem] min-[901px]:border-r">
             <Image
               className="object-cover object-[50%_43%]"
               src="/savyy/ios-full-scope.jpg"
@@ -246,12 +246,12 @@ export function SavyyCaseStudy() {
               alt="Savyy mobile menu showing simulators, reports, exports, alerts, and support"
             />
           </figure>
-          <div className="flex flex-col justify-center px-[1.7rem] py-16 min-[641px]:px-[var(--page-gutter)] min-[641px]:py-24">
+          <div className="flex flex-col justify-center px-[1.7rem] py-12 min-[641px]:px-[var(--page-gutter)] min-[641px]:py-16">
             <div className="grid grid-cols-[2rem_minmax(0,1fr)] gap-5 min-[641px]:grid-cols-[2.5rem_minmax(0,1fr)] min-[641px]:gap-7">
               <SectionRail>03 / Releases</SectionRail>
               <div>
                 <h2
-                  className="m-0 max-w-[10ch] font-serif text-[clamp(3.6rem,12vw,5.75rem)] leading-[0.95] font-semibold tracking-[-0.03em]"
+                  className="m-0 max-w-[17ch] text-balance font-serif text-[var(--type-section)] leading-[1.08] font-medium tracking-[-0.025em]"
                   id="release-title"
                 >
                   One product, three real clients.
@@ -289,12 +289,12 @@ export function SavyyCaseStudy() {
         aria-labelledby="privacy-title"
       >
         <div className="grid min-[901px]:grid-cols-[minmax(0,0.83fr)_minmax(0,1.17fr)]">
-          <header className="border-b border-[var(--cobalt)] px-[1.7rem] py-16 min-[641px]:px-[var(--page-gutter)] min-[641px]:py-24 min-[901px]:border-r min-[901px]:border-b-0">
+          <header className="border-b border-[var(--cobalt)] px-[1.7rem] py-12 min-[641px]:px-[var(--page-gutter)] min-[641px]:py-16 min-[901px]:border-r min-[901px]:border-b-0">
             <div className="grid grid-cols-[2rem_minmax(0,1fr)] gap-5 min-[641px]:grid-cols-[2.5rem_minmax(0,1fr)] min-[641px]:gap-7">
               <SectionRail>04 / Boundaries</SectionRail>
               <div>
                 <h2
-                  className="m-0 max-w-[10ch] font-serif text-[clamp(3.5rem,12vw,5.5rem)] leading-[0.96] font-semibold tracking-[-0.03em]"
+                  className="m-0 max-w-[17ch] text-balance font-serif text-[var(--type-section)] leading-[1.08] font-medium tracking-[-0.025em]"
                   id="privacy-title"
                 >
                   Privacy is a product decision.
@@ -310,7 +310,7 @@ export function SavyyCaseStudy() {
           <ol className="m-0 list-none p-0">
             {savyyProject.privacyBoundaries.map((boundary, index) => (
               <li
-                className="grid min-h-[9rem] grid-cols-[3.2rem_minmax(0,1fr)] gap-5 border-b border-[var(--rule-soft)] px-[1.7rem] py-8 last:border-b-0 min-[641px]:grid-cols-[4.5rem_minmax(0,1fr)] min-[641px]:px-[var(--page-gutter)] min-[641px]:py-10"
+                className="grid min-h-[7.5rem] grid-cols-[3.2rem_minmax(0,1fr)] gap-5 border-b border-[var(--rule-soft)] px-[1.7rem] py-7 last:border-b-0 min-[641px]:grid-cols-[4rem_minmax(0,1fr)] min-[641px]:px-[var(--page-gutter)]"
                 key={boundary}
               >
                 <span className="font-mono [font-size:var(--type-label)] text-[var(--signal)]">
@@ -331,7 +331,7 @@ export function SavyyCaseStudy() {
       >
         <div className="grid min-[901px]:grid-cols-[minmax(0,1fr)_auto] min-[901px]:items-end">
           <div className="border-b border-[var(--cobalt)] px-[1.7rem] py-14 min-[641px]:px-[var(--page-gutter)] min-[901px]:border-r min-[901px]:border-b-0">
-            <p className="m-0 max-w-[18ch] font-serif text-[clamp(2.5rem,8vw,4.5rem)] leading-[1.02] font-medium tracking-[-0.025em]">
+            <p className="m-0 max-w-[22ch] text-balance font-serif text-[var(--type-section)] leading-[1.08] font-medium tracking-[-0.025em]">
               The evidence is live. Open the product.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-7 gap-y-4">
@@ -349,7 +349,7 @@ export function SavyyCaseStudy() {
             </div>
           </div>
           <a
-            className="inline-flex min-h-[8.5rem] min-w-[17rem] items-center justify-between gap-8 bg-[var(--cobalt)] px-7 py-6 font-mono [font-size:var(--type-control)] font-semibold tracking-[0.045em] text-[var(--on-cobalt)] uppercase no-underline hover:bg-[var(--cobalt-dark)] min-[901px]:self-stretch"
+            className="inline-flex min-h-16 min-w-[15rem] items-center justify-between gap-8 bg-[var(--cobalt)] px-7 py-5 font-mono [font-size:var(--type-control)] font-semibold tracking-[0.045em] text-[var(--on-cobalt)] uppercase no-underline hover:bg-[var(--cobalt-dark)] min-[901px]:self-stretch"
             href={savyyProject.appUrl}
             target="_blank"
             rel="noopener noreferrer"

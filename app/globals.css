@@ -90,8 +90,14 @@
   --shadow-soft: rgba(16, 24, 40, 0.1);
   --shadow-overlay: rgba(16, 24, 40, 0.2);
   --shadow-tooltip: rgba(16, 24, 40, 0.14);
-  --page-gutter: clamp(1.25rem, 4.3vw, 5rem);
-  --content-width: 96rem;
+  --page-gutter: clamp(1.25rem, 3vw, 3.25rem);
+  --content-width: 76rem;
+  --index-width: 8.5rem;
+  --data-width: 60rem;
+  --reading-width: 68ch;
+  --type-display: clamp(2.5rem, 4vw, 3.25rem);
+  --type-section: clamp(1.875rem, 3vw, 2.5rem);
+  --type-project: clamp(2.75rem, 4vw, 3.5rem);
   --background: var(--paper);
   --foreground: var(--ink);
   --card: var(--paper-raised);
@@ -203,6 +209,7 @@
       ),
       url("/paper-texture.webp");
     background-blend-mode: normal, var(--body-texture-blend);
+    background-attachment: fixed, fixed;
     background-size: auto, 720px 720px;
     color: var(--ink);
     font-family: var(--font-sans), Arial, sans-serif;

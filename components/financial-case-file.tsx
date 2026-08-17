@@ -35,25 +35,25 @@ function CashFlowChart() {
 export function FinancialCaseFile({ projectName }: { projectName: string }) {
   return (
     <figure
-      className="relative m-0 h-[27rem] min-w-0 overflow-hidden animate-in duration-[720ms] ease-[cubic-bezier(0.16,1,0.3,1)] slide-in-from-top-[10px] motion-reduce:animate-none min-[641px]:h-[35rem] min-[901px]:h-[33.25rem]"
+      className="relative m-0 h-[22rem] min-w-0 overflow-hidden animate-in duration-[720ms] ease-[cubic-bezier(0.16,1,0.3,1)] slide-in-from-top-[10px] motion-reduce:animate-none min-[641px]:h-[24rem]"
       aria-labelledby="case-file-title"
     >
       <div
-        className="absolute inset-[3rem_0.7rem_1rem_1.1rem] rotate-[0.85deg] border border-[var(--case-stock-rule)] bg-[var(--case-stock)] bg-[url('/paper-texture.webp')] [background-blend-mode:var(--paper-texture-blend)] [background-size:580px] shadow-[8px_11px_24px_var(--shadow-medium)] before:absolute before:top-[-1.6rem] before:right-20 before:h-[1.65rem] before:w-[9.5rem] before:border before:border-b-0 before:border-[var(--case-stock-rule)] before:bg-[var(--case-stock)] before:content-[''] min-[641px]:inset-[3.6rem_1.2rem_1.1rem_2.7rem]"
+        className="absolute inset-[2.5rem_0.45rem_0.8rem_0.8rem] rotate-[0.85deg] border border-[var(--case-stock-rule)] bg-[var(--case-stock)] bg-[url('/paper-texture.webp')] [background-blend-mode:var(--paper-texture-blend)] [background-size:580px] shadow-[8px_11px_24px_var(--shadow-medium)] before:absolute before:top-[-1.25rem] before:right-12 before:h-[1.3rem] before:w-[7rem] before:border before:border-b-0 before:border-[var(--case-stock-rule)] before:bg-[var(--case-stock)] before:content-[''] min-[641px]:inset-[2.8rem_0.8rem_0.9rem_1.4rem]"
         aria-hidden="true"
       />
       <Paperclip
-        className="absolute top-[0.6rem] left-[24%] z-6 size-[2.8rem] -rotate-8 text-[var(--clip-ink)] drop-shadow-[2px_3px_2px_var(--shadow-strong)] min-[641px]:top-4 min-[641px]:size-[3.3rem]"
+        className="absolute top-[0.45rem] left-[24%] z-6 size-[2.35rem] -rotate-8 text-[var(--clip-ink)] drop-shadow-[2px_3px_2px_var(--shadow-strong)]"
         weight="thin"
         aria-hidden="true"
       />
       <Paperclip
-        className="absolute top-[0.6rem] right-[12%] z-6 size-[2.8rem] rotate-8 text-[var(--clip-ink)] drop-shadow-[2px_3px_2px_var(--shadow-strong)] min-[641px]:top-4 min-[641px]:size-[3.3rem]"
+        className="absolute top-[0.45rem] right-[12%] z-6 size-[2.35rem] rotate-8 text-[var(--clip-ink)] drop-shadow-[2px_3px_2px_var(--shadow-strong)]"
         weight="thin"
         aria-hidden="true"
       />
 
-      <div className="absolute inset-[3.4rem_1rem_1.3rem_1.45rem] z-2 -rotate-[0.28deg] border border-[var(--cobalt)] bg-[var(--case-sheet-surface)] bg-[url('/paper-texture.webp')] [background-blend-mode:var(--paper-texture-blend)] [background-size:620px] shadow-[5px_8px_18px_var(--shadow-soft)] min-[641px]:inset-[4rem_2.25rem_1.5rem_3.4rem]">
+      <div className="absolute inset-[2.8rem_0.75rem_1rem_1rem] z-2 -rotate-[0.28deg] border border-[var(--cobalt)] bg-[var(--case-sheet-surface)] bg-[url('/paper-texture.webp')] [background-blend-mode:var(--paper-texture-blend)] [background-size:620px] shadow-[5px_8px_18px_var(--shadow-soft)] min-[641px]:inset-[3.15rem_1.25rem_1.1rem_1.8rem]">
         <figcaption
           className="flex h-[2.1rem] items-center border-b border-[var(--cobalt)] px-4 font-mono [font-size:var(--type-micro)] font-bold tracking-[0.06em] text-[var(--cobalt)] uppercase"
           id="case-file-title"
@@ -70,7 +70,7 @@ export function FinancialCaseFile({ projectName }: { projectName: string }) {
             <span />
             <i />
           </div>
-          <div className="grid h-[calc(100%-1.55rem)] grid-cols-1 grid-rows-[minmax(0,1.35fr)_minmax(6.5rem,0.65fr)] border-t border-l border-[var(--cobalt)] min-[641px]:grid-cols-[minmax(0,1.6fr)_minmax(10rem,0.72fr)] min-[641px]:grid-rows-[minmax(0,1.2fr)_minmax(7.8rem,0.72fr)] [&>section]:min-w-0 [&>section]:border-r [&>section]:border-b [&>section]:border-[var(--cobalt)]">
+          <div className="grid h-[calc(100%-1.55rem)] grid-cols-1 grid-rows-[minmax(0,1.35fr)_minmax(5.5rem,0.65fr)] border-t border-l border-[var(--cobalt)] [&>section]:min-w-0 [&>section]:border-r [&>section]:border-b [&>section]:border-[var(--cobalt)]">
             <section className="pb-[0.4rem]" aria-label="Cash-flow model view">
               <div className="flex h-[1.8rem] items-center justify-between border-b border-[var(--rule-soft)] px-[0.65rem] font-mono [font-size:var(--type-diagram)] tracking-[0.05em] text-[var(--cobalt)] uppercase">
                 <span>Cash flow</span>
@@ -79,7 +79,7 @@ export function FinancialCaseFile({ projectName }: { projectName: string }) {
               <CashFlowChart />
             </section>
             <section
-              className="hidden flex-col min-[641px]:flex"
+              className="hidden"
               aria-label="Allocation model view"
             >
               <div className="flex h-[1.8rem] items-center justify-between border-b border-[var(--rule-soft)] px-[0.65rem] font-mono [font-size:var(--type-diagram)] tracking-[0.05em] text-[var(--cobalt)] uppercase">
@@ -117,7 +117,7 @@ export function FinancialCaseFile({ projectName }: { projectName: string }) {
                 </div>
               ))}
             </section>
-            <section className="hidden pb-3 min-[641px]:block" aria-label="Model notes">
+            <section className="hidden" aria-label="Model notes">
               <div className="flex h-[1.8rem] items-center justify-between border-b border-[var(--rule-soft)] px-[0.65rem] font-mono [font-size:var(--type-diagram)] tracking-[0.05em] text-[var(--cobalt)] uppercase">
                 <span>Notes</span>
               </div>
@@ -133,19 +133,19 @@ export function FinancialCaseFile({ projectName }: { projectName: string }) {
       </div>
 
       <span
-        className="absolute top-28 right-[0.2rem] z-5 hidden -rotate-6 font-serif text-base text-[var(--cobalt)] italic after:absolute after:top-[1.6rem] after:right-[1.4rem] after:h-px after:w-[4.5rem] after:origin-left after:rotate-[144deg] after:bg-[var(--cobalt)] after:content-[''] min-[1181px]:block"
+        className="hidden"
         aria-hidden="true"
       >
         price view
       </span>
       <span
-        className="absolute right-[0.4rem] bottom-[6.4rem] z-5 hidden max-w-24 -rotate-6 font-serif text-base text-[var(--cobalt)] italic after:absolute after:top-4 after:right-[4.8rem] after:h-px after:w-[4.5rem] after:origin-left after:rotate-[178deg] after:bg-[var(--cobalt)] after:content-[''] min-[1181px]:block"
+        className="hidden"
         aria-hidden="true"
       >
         decision context
       </span>
       <span
-        className="absolute bottom-[0.8rem] left-[44%] z-5 h-[2.3rem] w-16 -rotate-10 rounded-full border-[3px] border-[var(--signal)] min-[641px]:bottom-[1.1rem] min-[641px]:left-[36%] min-[641px]:h-[3.1rem] min-[641px]:w-[5.8rem]"
+        className="absolute bottom-[0.65rem] left-[42%] z-5 h-[2rem] w-14 -rotate-10 rounded-full border-2 border-[var(--signal)] min-[641px]:bottom-[0.8rem] min-[641px]:left-[38%] min-[641px]:h-[2.4rem] min-[641px]:w-[4.5rem]"
         aria-hidden="true"
       />
     </figure>

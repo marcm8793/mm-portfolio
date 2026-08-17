@@ -9,14 +9,14 @@ related_targets: ["app/layout.tsx","app/globals.css","components/github-activity
 
 - Target: `app/page.tsx`
 - Mode: Experience
-- Approved comp: `.impeccable/mocks/decision/homepage-activity-ledger.webp`
+- Approved direction: hybrid of `.impeccable/mocks/style-review/b-editorial-column.png` and `.impeccable/mocks/style-review/c-compact-index.png`
 - Primary action: Explore my work
 
 ## Direction
 
-Activity Ledger treats Marc’s public making as a continuous engineering record. The first viewport is an asymmetric thesis-and-proof spread: the developer/finance statement anchors the left, the Savyy personal-finance case file anchors the right, and a full-width recent-public-activity ledger cuts through their lower edge. The GitHub activity is evidence, not a score. Navigation uses workbook index tabs and the lower page continues with Savyy as the sole project case before the about, résumé, and blog binder.
+Activity Ledger treats Marc’s public making as a continuous engineering record. The approved direction combines B’s numbered vertical navigation with C’s sober, compact index rows. The intro is intentionally short; Savyy follows as the sole project case; GitHub activity is evidence rather than a score; About, Résumé, and Writing close the ledger as concise horizontal records.
 
-The comp’s photographed folder stack is not literalized as a flattened screenshot. It becomes accessible semantic HTML, inline SVG charts, layered paper surfaces, and a subtle raster paper texture so the product specimen remains responsive and inspectable. The activity matrix uses the authenticated GitHub contribution calendar, including anonymous private counts, with a selectable full-year view, yearly facts, and public account statistics. Mobile preserves the reading order—thesis, project case, activity ledger—without squeezing the desktop split.
+The financial proof remains accessible semantic HTML, inline SVG charts, layered paper surfaces, and a subtle raster texture, but it is compressed so it supports the page rather than dominating it. The activity matrix uses the authenticated GitHub contribution calendar, including anonymous private counts, with a selectable full-year view, yearly facts, and public account statistics. Dense evidence is limited to a 60rem band and prose to 68ch. Mobile preserves the same reading order without squeezing the desktop rail into the viewport.
 
 ## Component grammar
 
@@ -30,24 +30,24 @@ The comp’s photographed folder stack is not literalized as a flattened screens
 
 | Comp ingredient | Implementation medium | Commitment |
 | --- | --- | --- |
-| MARC MANSOUR brand and six index tabs | Semantic header/nav + Tailwind tab geometry | Exact labels: Home, Projects, About, Resume, Contact, Blog |
-| Developer/finance thesis | Semantic heading and prose | Dominant left typographic anchor, not centered |
+| MARC MANSOUR brand and six numbered entries | Semantic header/nav + Tailwind rail geometry | Vertical desktop rail; mobile Sheet; exact labels: Home, Projects, About, Resume, Contact, Blog |
+| Developer/finance thesis | Semantic heading and prose | Compact left typographic anchor, not centered or oversized |
 | Explore my work | Semantic anchor styled as primary action | Solid cobalt control with directional arrow |
 | Read the journal | Semantic anchor styled as secondary action | Quiet outlined companion |
-| Savyy personal-finance case file | Semantic HTML + Tailwind utilities + inline SVG | Dominant right proof object; layered paper overlap and annotation arrows retained |
+| Savyy personal-finance case file | Semantic HTML + Tailwind utilities + inline SVG | Compact proof object; layered paper overlap retained |
 | Case-file paper material | Generated raster texture + Tailwind layers | Warm tactile surface, never a glossy dashboard card |
 | Red proof circle and cobalt annotations | Tailwind/SVG decoration, aria-hidden | Sparse and purposeful; preserve overlap and directionality |
-| Recent activity ledger | Cached GitHub GraphQL calendar + public REST detail | Full-width horizontal ribbon; authenticated totals and no private repository identities |
+| Recent activity ledger | Cached GitHub GraphQL calendar + public REST detail | Centered 60rem evidence band; authenticated totals and no private repository identities |
 | Full-year contribution cells | Tailwind grid with accessible labels and instant shadcn tooltips | Real GitHub day counts and contribution levels, including anonymous private activity |
 | Year selector and evidence ribbon | shadcn dropdown + semantic definition lists | Active days, busiest day/month, yearly totals, account profile, repositories, and streaks |
 | Sole featured project | Semantic Savyy dossier | Source-backed product detail and one direct visit action; no repository index |
-| Numbered lower contents | Semantic sections | About, Resume, and Blog continue the binder rhythm |
+| Compact lower contents | Semantic sections | About, Resume, and Blog continue as shallow ruled rows |
 | Footer contact index | Semantic footer links + iconography | LinkedIn, X, GitHub, and mailto destinations |
 
 All page and component geometry is expressed with Tailwind utilities, including responsive, state, pseudo-element, and arbitrary-property variants. `app/globals.css` is reserved for Tailwind imports, semantic theme tokens, and true browser-wide base defaults.
 
 ## Responsive contract
 
-- Desktop: thesis and case file share the first row; the activity ledger crosses beneath both.
-- Tablet: case file remains dominant but annotations simplify; tabs may scroll horizontally.
+- Desktop: fixed 8.5rem numbered rail; 67.5rem main field; Savyy and activity sit in narrower evidence bands.
+- Tablet: the rail gives way to the mobile header; the case file and annotations simplify.
 - Mobile: single-column order with a horizontally scrollable activity matrix, 44px minimum interactive targets, and no hidden primary content.

@@ -34,31 +34,23 @@ typography:
     lead: "1.125rem"
     title: "1.1875rem"
     intro: "1.3125rem"
-    binder-min: "2.65rem"
-    binder-alt-min: "2.8rem"
-    headline-min: "3rem"
-    footer-min: "3.1rem"
-    mobile-footer-min: "3.3rem"
-    mobile-title-min: "3.4rem"
-    display-min: "3.75rem"
-    project-min: "4rem"
-    binder-max: "4.25rem"
-    mobile-display-max: "4.5rem"
-    headline-max: "5rem"
-    display-max: "5.25rem"
-    footer-max: "5.5rem"
-    project-max: "6rem"
+    section-min: "1.875rem"
+    section-max: "2.5rem"
+    display-min: "2.5rem"
+    display-max: "3.25rem"
+    project-min: "2.75rem"
+    project-max: "3.5rem"
   display:
     fontFamily: "Bitter, Georgia, serif"
-    fontSize: "clamp(3.75rem, 5.4vw, 5.25rem)"
-    fontWeight: 600
-    lineHeight: 0.96
+    fontSize: "clamp(2.5rem, 4vw, 3.25rem)"
+    fontWeight: 500
+    lineHeight: 1.02
     letterSpacing: "-0.025em"
   headline:
     fontFamily: "Bitter, Georgia, serif"
-    fontSize: "clamp(3rem, 5vw, 5rem)"
-    fontWeight: 600
-    lineHeight: 0.98
+    fontSize: "clamp(1.875rem, 3vw, 2.5rem)"
+    fontWeight: 500
+    lineHeight: 1.06
     letterSpacing: "-0.025em"
   title:
     fontFamily: "Bitter, Georgia, serif"
@@ -80,7 +72,11 @@ rounded:
   sm: "2px"
   md: "3px"
 spacing:
-  page-gutter: "clamp(1.25rem, 4.3vw, 5rem)"
+  page-gutter: "clamp(1.25rem, 3vw, 3.25rem)"
+  outer-sheet: "76rem"
+  index-rail: "8.5rem"
+  data-measure: "60rem"
+  reading-measure: "68ch"
 components:
   action-primary:
     backgroundColor: "{colors.cobalt}"
@@ -102,12 +98,12 @@ components:
     backgroundColor: "{colors.paper-raised}"
     textColor: "{colors.cobalt-dark}"
     rounded: "{rounded.sm}"
-  navigation-tab:
-    backgroundColor: "rgba(251, 252, 250, 0.52)"
+  navigation-rail:
+    backgroundColor: "transparent"
     textColor: "{colors.ink}"
     typography: "{typography.label}"
-    height: "4.8rem"
-  navigation-tab-hover:
+    width: "8.5rem"
+  navigation-rail-hover:
     backgroundColor: "{colors.paper-raised}"
     textColor: "{colors.cobalt}"
   badge-solid:
@@ -144,7 +140,7 @@ components:
     backgroundColor: "rgba(251, 252, 250, 0.56)"
     darkBackgroundColor: "rgba(17, 28, 42, 0.62) under a 92% Raised Stock wash"
     textColor: "{colors.ink}"
-    padding: "clamp(2.5rem, 5vw, 5.5rem)"
+    padding: "clamp(1.5rem, 3vw, 3.25rem)"
   footer-index:
     backgroundColor: "#101828"
     textColor: "#f4f7f5"
@@ -171,7 +167,7 @@ The system is editorial without becoming precious. High-contrast serif statement
 
 - Recycled day paper or midnight-blue night stock with the same raster grain and 32px horizontal ruling.
 - Cobalt rules and labels that organize almost every surface.
-- Large asymmetric serif statements paired with compact monospaced evidence.
+- Restrained asymmetric serif statements paired with compact monospaced evidence.
 - Sparse data lime and a single signal-red proof gesture.
 - Semantic, responsive components that preserve reading order and inspectability.
 
@@ -191,7 +187,7 @@ The palette behaves like ink and notation on cool recycled stock: cobalt builds 
 
 ### Tertiary
 
-- **Signal Red** (`#c8313b`): A deliberately rare proof mark used for the hand-drawn circle and the notebook margin/active-tab signal.
+- **Signal Red** (`#c8313b`): A deliberately rare proof mark used for the hand-drawn circle and the mobile notebook margin signal.
 
 ### Neutral
 
@@ -231,8 +227,8 @@ Dark mode is a second working-paper composition, not an inversion. **Night Paper
 
 ### Hierarchy
 
-- **Display** (600, `clamp(3.75rem, 5.4vw, 5.25rem)`, 0.96): The first thesis statement; keep it short, left anchored, and sturdy. The lead project name uses the larger `clamp(4rem, 6.5vw, 6rem)` specimen at weight 500 and 0.92 line height.
-- **Headline** (600, `clamp(3rem, 5vw, 5rem)`, 0.98): Major section propositions and closing invitations, tracked at `-0.025em`.
+- **Display** (500, `clamp(2.5rem, 4vw, 3.25rem)`, 1.02): The first thesis statement; keep it concise, left anchored, and below half of the initial viewport. The lead project name may rise only to `clamp(2.75rem, 4vw, 3.5rem)`.
+- **Headline** (500, `clamp(1.875rem, 3vw, 2.5rem)`, 1.06): Major section propositions and closing invitations, tracked at `-0.025em`.
 - **Title** (500, `1.1875rem`, 1.4): Compact italic premise statements and working notes.
 - **Body** (400, `1rem`–`1.0625rem`, 1.65–1.7): Supporting explanations and project copy, typically held between 34rem and 42rem rather than allowed to run full width.
 - **Label** (500–700, `0.6875rem`–`0.8125rem`, `0.02em`–`0.065em`, uppercase when indexing): Navigation, buttons, case labels, activity metadata, badge text, dates, and register marks. Public metadata never drops below 0.6875rem.
@@ -245,9 +241,9 @@ Dark mode is a second working-paper composition, not an inversion. **Night Paper
 
 ## Layout
 
-The page is a ruled working sheet contained at `96rem`, centered inside a full-width field and edged with 1px cobalt rules. A responsive page gutter (`clamp(1.25rem, 4.3vw, 5rem)`) aligns the brand, thesis, ledger headings, dossiers, binder entries, and footer. A faint horizontal line repeats every 32px, while a single red vertical margin line sits near the left edge.
+The page is a ruled working sheet contained at `76rem`, centered inside a full-width field and edged with 1px cobalt rules. On desktop, a stable `8.5rem` numbered navigation rail leaves a `67.5rem` main field. Dense evidence is held to `60rem`, prose to `68ch`, and the responsive page gutter (`clamp(1.25rem, 3vw, 3.25rem)`) prevents either from spreading to the full field. A faint horizontal line repeats every 32px. The cobalt rail divider is the single desktop vertical axis; the red notebook margin is reserved for the mobile sheet where the rail is absent.
 
-Desktop compositions use unequal columns rather than centered stacks: the hero balances a narrower thesis against a wider case file, the activity ledger gives the full-year matrix the wide evidence column, places a compact four-field year summary directly beneath it, and closes with a ruled profile-and-account strip; the project dossier divides summary from premise, and the lower binder uses `1.35fr / 0.65fr / 1fr`. Its three records share subgrid title, description, and action rows so every text start lands on the same ledger baseline without fixed heading heights. At `1180px`, annotations simplify while the activity ledger preserves its graph-first hierarchy. At `900px`, the hero and dossier stack while the six-tab header compacts into a touch-first Sheet index. At `640px`, all primary content reads in one column, actions become full width, the financial model reduces to its essential chart and account table, the activity matrix retains horizontal overflow, yearly GitHub facts reflow to a two-by-two ledger, and the three account measurements remain a compact row.
+Desktop compositions use compact ruled rows rather than large editorial panels: intro, Savyy proof, GitHub evidence, About, Résumé, Writing, and Contact read as one indexed ledger. Evidence can use the `60rem` band, while explanations remain on the narrower reading measure. Section rhythm comes from 1.5–3.25rem vertical padding, not fixed heights. At `900px`, the numbered rail becomes a touch-first Sheet index and content returns to one column. At `640px`, actions become full width, the financial model reduces to its essential chart and account table, and the activity matrix alone retains intentional horizontal overflow.
 
 **The Cross-Page Ledger Rule.** Use continuous rules and shared alignment to connect sections; avoid isolated floating cards with independent gutters.
 
@@ -305,7 +301,7 @@ Content containers are dossiers and ledgers, not cards.
 
 ### Navigation
 
-The header is a workbook index built on shadcn’s Base UI Navigation Menu, with a bold monospaced register mark and six uppercase desktop tabs sharing the remaining row. Each tab uses one continuous cobalt top rule with straight vertical separators so the Activity Ledger geometry stays crisp at every pixel density; hover shifts to cobalt and the active destination adds a 2px signal-red underline. At `900px` and below, the header becomes sticky and the desktop menu becomes a shadcn Sheet opened by a 44px-plus ledger control; section anchors reserve enough clearance to remain visible below it. The Sheet preserves every destination in the same order, closes on selection or Escape, traps focus, and restyles the shadcn primitives as a ruled paper index instead of introducing a generic floating menu.
+The desktop header is a sticky vertical index rail. A compact register mark sits above six numbered destinations—Home, Projects, About, Résumé, Contact, and Blog—and the active destination uses cobalt text plus a slim signal marker. The constant rail width establishes one structural axis across every route. At `900px` and below, the rail becomes a sticky horizontal header and a shadcn Sheet opened by a 44px-plus ledger control. The Sheet preserves the same numbers and order, closes on selection or Escape, traps focus, and remains a ruled paper index rather than a generic floating menu.
 
 ### Theme Control
 
