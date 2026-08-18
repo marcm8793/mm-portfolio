@@ -44,11 +44,11 @@ const navigation = [
     awayHref: "/contact",
     activeKey: "/contact",
   },
-  { label: "Blog", homeHref: "#blog", awayHref: "/#blog", activeKey: "#blog" },
+  { label: "Blog", homeHref: "/blog", awayHref: "/blog", activeKey: "/blog" },
 ] as const;
 
 type SiteHeaderProps = {
-  activePage?: "home" | "projects" | "about" | "resume" | "contact";
+  activePage?: "home" | "projects" | "about" | "resume" | "contact" | "blog";
 };
 
 export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
@@ -61,7 +61,9 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
           ? "/cv"
           : activePage === "projects"
             ? "/projects"
-            : "#home",
+            : activePage === "blog"
+              ? "/blog"
+              : "#home",
   );
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -99,9 +101,11 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
         ? "B"
         : activePage === "resume"
           ? "R"
-        : activePage === "projects"
-          ? "P"
-          : "A";
+          : activePage === "projects"
+            ? "P"
+            : activePage === "blog"
+              ? "W"
+              : "A";
 
   return (
     <header className="sticky top-0 z-40 grid min-h-[4.6rem] grid-cols-[minmax(0,1fr)_auto] border-b border-[var(--cobalt)] bg-[var(--header-surface-strong)] min-[901px]:h-svh min-[901px]:min-h-0 min-[901px]:grid-cols-1 min-[901px]:grid-rows-[auto_1fr_auto] min-[901px]:border-b-0 min-[901px]:bg-[var(--header-surface)]">
@@ -217,7 +221,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
               aria-hidden="true"
             >
               <span>Book 01</span>
-              <span>Page A</span>
+              <span>Page {pageCode}</span>
             </div>
           </SheetContent>
         </Sheet>

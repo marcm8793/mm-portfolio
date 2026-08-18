@@ -1,0 +1,78 @@
+{
+  "title": "Choose the blog structure",
+  "question": "All three keep the Activity Ledger identity and sort every article newest first. Choose the reading structure to carry into implementation.",
+  "options": [
+    {
+      "id": "annotated-chronology",
+      "label": "Annotated Chronology",
+      "kicker": "THE ROLL",
+      "lineage": "research log chronology with margin annotations",
+      "thesis": "A continuous dated reading ledger where every article feels like a new entry in an evolving body of work.",
+      "palette": [
+        "#f4f7f5",
+        "#101828",
+        "#174ea6",
+        "#9fd818"
+      ],
+      "materials": [
+        "ruled recycled paper",
+        "cobalt margin notation",
+        "monospaced register marks"
+      ],
+      "viewport": "A compact Writing masthead gives way immediately to a vertical date spine; the newest three articles occupy ruled rows with title, abstract, topic, reading time, and a clear open action.",
+      "risk": "A long archive can feel repetitive unless year markers and row density create a strong cadence.",
+      "comp": ".impeccable/mocks/decision/blog-annotated-chronology.webp"
+    },
+    {
+      "id": "reference-manual-index",
+      "label": "Reference Manual Index",
+      "lineage": "tabbed technical manuals and printed subject indexes",
+      "thesis": "The blog becomes a compact technical reference whose chronology is visible but whose topics are effortless to scan.",
+      "palette": [
+        "#f4f7f5",
+        "#101828",
+        "#174ea6",
+        "#dff39d"
+      ],
+      "materials": [
+        "stepped year tabs",
+        "indexed article rows",
+        "punched register details"
+      ],
+      "viewport": "A narrow year-and-topic register sits beside a dense newest-first article index; extended tabs mark the active year while each row exposes date, category, title, and summary.",
+      "risk": "The reference density needs careful mobile adaptation so navigation never competes with reading.",
+      "comp": ".impeccable/mocks/decision/blog-reference-manual-index.webp"
+    },
+    {
+      "id": "open-reading-dossier",
+      "label": "Open Reading Dossier",
+      "lineage": "an analyst's active case file followed by its evidence register",
+      "thesis": "The newest article receives one decisive editorial moment, while the rest remain a disciplined chronological archive.",
+      "palette": [
+        "#f4f7f5",
+        "#fbfcfa",
+        "#174ea6",
+        "#c8313b"
+      ],
+      "materials": [
+        "one raised paper dossier",
+        "flat ruled archive rows",
+        "single proof-mark annotation"
+      ],
+      "viewport": "The latest article opens as a broad paper dossier with title, premise, date, topic, and read action; directly below, all remaining posts continue newest first as a compact ledger.",
+      "risk": "The featured entry must stay editorial rather than turning into a generic hero card.",
+      "comp": ".impeccable/mocks/decision/blog-open-reading-dossier.webp"
+    }
+  ],
+  "reroll": {
+    "registers": [
+      "safer",
+      "bolder"
+    ]
+  },
+  "buildPath": {
+    "value": "comp",
+    "toggle": true
+  },
+  "steer": true
+}

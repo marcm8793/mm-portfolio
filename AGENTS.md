@@ -15,3 +15,9 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Do not create CSS Modules or handwritten stylesheet rules for UI styling unless the user explicitly authorizes an exception.
 - Keep `app/globals.css` limited to Tailwind imports, design tokens, and true base/browser defaults. Component and page selectors do not belong there.
 - Express complex responsive states, pseudo-elements, and one-off values with Tailwind variants and arbitrary properties. Extract reusable React components or static Tailwind class constants when utility strings repeat.
+
+# Component organization
+
+- Colocate route-specific components inside the owning route using a private `_components/` directory.
+- Keep the top-level `components/` directory for components shared across multiple top-level routes or used application-wide.
+- Promote a component to the nearest shared ancestor only when real reuse emerges; do not place single-route components in a global folder preemptively.

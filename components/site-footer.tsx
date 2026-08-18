@@ -39,7 +39,7 @@ type SiteFooterProps = {
 
 export function SiteFooter({ showCta = true }: SiteFooterProps) {
   return (
-    <footer id="contact" className="scroll-mt-[5.9rem] min-[901px]:scroll-mt-6">
+    <footer id="contact" className="mt-auto scroll-mt-[5.9rem] min-[901px]:scroll-mt-6">
       {showCta ? (
         <div className="grid grid-cols-1 items-start gap-7 border-y border-[var(--cobalt)] px-[1.7rem] py-10 min-[641px]:px-[var(--page-gutter)] min-[641px]:py-[clamp(3rem,5vw,4.5rem)] min-[901px]:grid-cols-[minmax(0,1fr)_auto] min-[901px]:items-center">
           <h2 className="m-0 max-w-[22ch] text-balance font-serif text-[clamp(2rem,6vw,2.5rem)] leading-[1.08] font-medium tracking-[-0.025em] min-[641px]:text-[var(--type-section)]">

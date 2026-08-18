@@ -8,7 +8,6 @@ import { GitHubActivity } from "@/components/github-activity";
 import { SiteShell } from "@/components/site-shell";
 import { Badge } from "@/components/ui/badge";
 import { featuredProject } from "@/lib/projects";
-import { publicProfile } from "@/lib/public-profile";
 import { cn } from "@/lib/utils";
 
 const directionContract = `<!--
@@ -79,14 +78,12 @@ export default function Home() {
               >
                 Explore my work <ArrowRight aria-hidden="true" />
               </a>
-              <a
+              <Link
                 className="inline-flex min-h-11 items-center gap-2 px-1 font-mono [font-size:var(--type-label)] font-semibold text-[var(--cobalt)] no-underline hover:text-[var(--cobalt-dark)] hover:underline min-[901px]:justify-end"
-                href={publicProfile.blog.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/blog"
               >
-                Read the journal <ArrowUpRight aria-hidden="true" />
-              </a>
+                Read the journal <ArrowRight aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </section>
@@ -198,14 +195,12 @@ export default function Home() {
                 Public writing for builders and finance-minded readers.
               </p>
             </div>
-            <a
+            <Link
               className={indexLinkClass}
-              href={publicProfile.blog.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/blog"
             >
-              Visit the blog <ArrowUpRight aria-hidden="true" />
-            </a>
+              Read the journal <ArrowRight aria-hidden="true" />
+            </Link>
           </article>
         </section>
       </main>
