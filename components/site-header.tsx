@@ -94,21 +94,8 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
   };
 
   const homeHref = activePage === "home" ? "#home" : "/#home";
-  const pageCode =
-    activePage === "contact"
-      ? "C"
-      : activePage === "about"
-        ? "B"
-        : activePage === "resume"
-          ? "R"
-          : activePage === "projects"
-            ? "P"
-            : activePage === "blog"
-              ? "W"
-              : "A";
-
   return (
-    <header className="sticky top-0 z-40 grid min-h-[4.6rem] grid-cols-[minmax(0,1fr)_auto] border-b border-[var(--cobalt)] bg-[var(--header-surface-strong)] min-[901px]:h-svh min-[901px]:min-h-0 min-[901px]:grid-cols-1 min-[901px]:grid-rows-[auto_1fr_auto] min-[901px]:border-b-0 min-[901px]:bg-[var(--header-surface)]">
+    <header className="sticky top-0 z-40 grid min-h-[4.6rem] grid-cols-[minmax(0,1fr)_auto] border-b border-[var(--cobalt)] bg-[var(--header-surface-strong)] min-[901px]:h-svh min-[901px]:min-h-0 min-[901px]:grid-cols-1 min-[901px]:grid-rows-[auto_1fr] min-[901px]:border-b-0 min-[901px]:bg-[var(--header-surface)]">
       <Link
         className="flex min-h-[4.6rem] items-center pr-6 pl-[1.6rem] font-mono text-[clamp(1.0625rem,1.6vw,1.3125rem)] leading-none font-bold tracking-[0.065em] text-[var(--ink)] no-underline min-[641px]:pl-[var(--page-gutter)] min-[901px]:min-h-[5.5rem] min-[901px]:border-b min-[901px]:border-[var(--cobalt)] min-[901px]:px-5 min-[901px]:text-[0.9rem] min-[901px]:leading-[1.25]"
         href={homeHref}
@@ -147,16 +134,6 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
           })}
         </NavigationMenuList>
       </NavigationMenu>
-
-      <div
-        className="hidden grid-cols-[1fr_auto] content-center gap-x-3 gap-y-[0.15rem] border-t border-[var(--cobalt)] px-4 py-5 font-mono [font-size:var(--type-micro)] tracking-[0.055em] text-[var(--cobalt)] uppercase min-[901px]:grid [&>strong]:font-serif [&>strong]:text-base [&>strong]:font-normal [&>strong]:italic"
-        aria-hidden="true"
-      >
-        <span>Book</span>
-        <strong>01</strong>
-        <span>Page</span>
-        <strong>{pageCode}</strong>
-      </div>
 
       <div className="flex min-[901px]:hidden">
         <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
@@ -215,14 +192,6 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
                 })}
               </ul>
             </nav>
-
-            <div
-              className="mt-auto flex justify-between border-t border-[var(--cobalt)] py-[1.4rem] pr-8 pl-12 font-mono [font-size:var(--type-micro)] tracking-[0.055em] text-[var(--cobalt)] uppercase"
-              aria-hidden="true"
-            >
-              <span>Book 01</span>
-              <span>Page {pageCode}</span>
-            </div>
           </SheetContent>
         </Sheet>
       </div>
