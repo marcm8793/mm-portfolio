@@ -57,7 +57,7 @@ export default function BlogArticlePage({ params }: BlogArticlePageProps) {
 
 function BlogArticleFallback() {
   return (
-    <SiteShell activePage="blog" showFooterCta={false}>
+    <SiteShell showFooterCta={false}>
       <main id="main-content">
         <div
           className="min-h-[32rem] px-[1.7rem] py-[clamp(3rem,7vw,5.5rem)] min-[641px]:px-[var(--page-gutter)]"
@@ -98,7 +98,7 @@ async function BlogArticleContent({
   };
 
   return (
-    <SiteShell activePage="blog" showFooterCta={false}>
+    <SiteShell showFooterCta={false}>
       <main id="main-content">
         <script
           type="application/ld+json"

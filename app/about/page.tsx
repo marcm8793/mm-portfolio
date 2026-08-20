@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <SiteShell activePage="about">
+    <SiteShell>
       <div
         hidden
         data-direction-contract="working-dossier"

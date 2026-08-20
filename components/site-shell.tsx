@@ -4,13 +4,11 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 type SiteShellProps = {
-  activePage?: "home" | "projects" | "about" | "resume" | "contact" | "blog";
   children: ReactNode;
   showFooterCta?: boolean;
 };
 
 export function SiteShell({
-  activePage = "home",
   children,
   showFooterCta = true,
 }: SiteShellProps) {
@@ -22,7 +20,7 @@ export function SiteShell({
       >
         Skip to content
       </a>
-      <SiteHeader activePage={activePage} />
+      <SiteHeader />
       <div className="flex min-h-[calc(100svh-4.6rem)] min-w-0 flex-col min-[901px]:min-h-screen min-[901px]:border-l min-[901px]:border-[var(--cobalt)]">
         {children}
         <SiteFooter showCta={showFooterCta} />

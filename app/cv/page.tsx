@@ -59,7 +59,7 @@ function PdfLink({ pdf }: { pdf: ResumePdf }) {
 
 export default function ResumePage() {
   return (
-    <SiteShell activePage="resume">
+    <SiteShell>
       <div
         hidden
         data-direction-contract="career-ledger"

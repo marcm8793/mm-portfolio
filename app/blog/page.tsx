@@ -38,7 +38,7 @@ export default async function BlogPage() {
   }).format(posts.length);
 
   return (
-    <SiteShell activePage="blog" showFooterCta={false}>
+    <SiteShell showFooterCta={false}>
       <div
         hidden
         data-direction-contract="blog-annotated-chronology-6e0a22f7"

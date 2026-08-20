@@ -67,7 +67,7 @@ const openingIndex = [
 
 export default function ProjectsPage() {
   return (
-    <SiteShell activePage="projects">
+    <SiteShell>
       <div
         hidden
         data-direction-contract="one-product-manifesto"

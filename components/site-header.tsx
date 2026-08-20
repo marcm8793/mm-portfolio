@@ -4,6 +4,7 @@ import { ArrowRightIcon } from "@phosphor-icons/react/dist/csr/ArrowRight";
 import { ListIcon } from "@phosphor-icons/react/dist/csr/List";
 import type { Route } from "next";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import {
@@ -24,83 +25,59 @@ import {
 import { cn } from "@/lib/utils";
 
 const navigation = [
-  { label: "Home", homeHref: "#home", awayHref: "/#home", activeKey: "#home" },
+  { label: "Home", homeHref: "#home", awayHref: "/#home", activePath: "/" },
   {
     label: "Projects",
     homeHref: "/projects",
     awayHref: "/projects",
-    activeKey: "/projects",
+    activePath: "/projects",
   },
-  { label: "About", homeHref: "/about", awayHref: "/about", activeKey: "/about" },
+  { label: "About", homeHref: "/about", awayHref: "/about", activePath: "/about" },
   {
     label: "Resume",
     homeHref: "/cv",
     awayHref: "/cv",
-    activeKey: "/cv",
+    activePath: "/cv",
   },
   {
     label: "Contact",
     homeHref: "/contact",
     awayHref: "/contact",
-    activeKey: "/contact",
+    activePath: "/contact",
   },
-  { label: "Blog", homeHref: "/blog", awayHref: "/blog", activeKey: "/blog" },
+  { label: "Blog", homeHref: "/blog", awayHref: "/blog", activePath: "/blog" },
 ] as const;
 
-type SiteHeaderProps = {
-  activePage?: "home" | "projects" | "about" | "resume" | "contact" | "blog";
-};
+function isActivePath(pathname: string, activePath: string) {
+  if (activePath === "/") return pathname === activePath;
 
-export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
-  const [activeDestination, setActiveDestination] = useState(
-    activePage === "about"
-      ? "/about"
-      : activePage === "contact"
-        ? "/contact"
-        : activePage === "resume"
-          ? "/cv"
-          : activePage === "projects"
-            ? "/projects"
-            : activePage === "blog"
-              ? "/blog"
-              : "#home",
-  );
+  return pathname === activePath || pathname.startsWith(`${activePath}/`);
+}
+
+export function SiteHeader() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const isHomePage = pathname === "/";
+  const homeHref = isHomePage ? "#home" : "/#home";
 
   useEffect(() => {
-    const syncHash = () => {
-      if (activePage === "home") {
-        setActiveDestination(window.location.hash || "#home");
-      }
-    };
     const desktopQuery = window.matchMedia("(min-width: 901px)");
     const closeOnDesktop = (event: MediaQueryListEvent) => {
       if (event.matches) setMenuOpen(false);
     };
 
-    syncHash();
-    window.addEventListener("hashchange", syncHash);
     desktopQuery.addEventListener("change", closeOnDesktop);
 
-    return () => {
-      window.removeEventListener("hashchange", syncHash);
-      desktopQuery.removeEventListener("change", closeOnDesktop);
-    };
-  }, [activePage]);
+    return () => desktopQuery.removeEventListener("change", closeOnDesktop);
+  }, []);
 
-  const chooseDestination = (activeKey: string) => {
-    setActiveDestination(activeKey);
-    setMenuOpen(false);
-  };
-
-  const homeHref = activePage === "home" ? "#home" : "/#home";
   return (
     <header className="sticky top-0 z-40 grid min-h-[4.6rem] grid-cols-[minmax(0,1fr)_auto] border-b border-[var(--cobalt)] bg-[var(--header-surface-strong)] min-[901px]:h-svh min-[901px]:min-h-0 min-[901px]:grid-cols-1 min-[901px]:grid-rows-[auto_1fr] min-[901px]:border-b-0 min-[901px]:bg-[var(--header-surface)]">
       <Link
         className="flex min-h-[4.6rem] items-center pr-6 pl-[1.6rem] font-mono text-[clamp(1.0625rem,1.6vw,1.3125rem)] leading-none font-bold tracking-[0.065em] text-[var(--ink)] no-underline min-[641px]:pl-[var(--page-gutter)] min-[901px]:min-h-[5.5rem] min-[901px]:border-b min-[901px]:border-[var(--cobalt)] min-[901px]:px-5 min-[901px]:text-[0.9rem] min-[901px]:leading-[1.25]"
         href={homeHref}
         aria-label="Marc Mansour, home"
-        onClick={() => chooseDestination("#home")}
+        onClick={() => setMenuOpen(false)}
       >
         MARC MANSOUR
       </Link>
@@ -111,8 +88,8 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
       >
         <NavigationMenuList className="m-0 grid h-auto w-full grid-cols-1 list-none p-0 [&>li]:min-w-0">
           {navigation.map((item, index) => {
-            const href = activePage === "home" ? item.homeHref : item.awayHref;
-            const isActive = activeDestination === item.activeKey;
+            const href = isHomePage ? item.homeHref : item.awayHref;
+            const isActive = isActivePath(pathname, item.activePath);
 
             return (
               <NavigationMenuItem key={item.label}>
@@ -122,7 +99,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
                   )}
                   href={href as Route}
                   aria-current={isActive ? "page" : undefined}
-                  onClick={() => chooseDestination(item.activeKey)}
+                  onClick={() => setMenuOpen(false)}
                 >
                   <span className="text-[var(--cobalt)]">
                     {String(index + 1).padStart(2, "0")}
@@ -168,8 +145,8 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
             <nav aria-label="Mobile navigation">
               <ul className="m-0 list-none p-0">
                 {navigation.map((item, index) => {
-                  const href = activePage === "home" ? item.homeHref : item.awayHref;
-                  const isActive = activeDestination === item.activeKey;
+                  const href = isHomePage ? item.homeHref : item.awayHref;
+                  const isActive = isActivePath(pathname, item.activePath);
 
                   return (
                     <li key={item.label}>
@@ -177,7 +154,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
                         className="grid min-h-[4.2rem] grid-cols-[1fr_auto] items-center gap-4 border-b border-[var(--rule-soft)] py-[0.9rem] pr-8 pl-12 font-mono [font-size:var(--type-control)] font-semibold tracking-[0.05em] text-[var(--ink)] uppercase no-underline transition-colors duration-[180ms] hover:bg-[var(--paper-deep)] hover:text-[var(--cobalt)] focus-visible:bg-[var(--paper-deep)] focus-visible:text-[var(--cobalt)] aria-[current=page]:bg-[var(--selection-surface)] aria-[current=page]:text-[var(--cobalt)] aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:decoration-[var(--signal)] aria-[current=page]:underline-offset-[0.55rem] [&_svg]:size-4"
                         href={href as Route}
                         aria-current={isActive ? "page" : undefined}
-                        onClick={() => chooseDestination(item.activeKey)}
+                        onClick={() => setMenuOpen(false)}
                       >
                         <span className="grid grid-cols-[2rem_1fr] gap-3">
                           <span className="text-[var(--cobalt)]">

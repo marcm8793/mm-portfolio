@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <SiteShell activePage="contact" showFooterCta={false}>
+    <SiteShell showFooterCta={false}>
       <main className="overflow-clip" id="main-content">
         <ContactDispatch
           destination={contactConfig.recipient}
