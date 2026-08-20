@@ -62,7 +62,7 @@ export function SiteFooter({ showCta = true }: SiteFooterProps) {
           {contactLinks.map(({ label, href, icon: Icon }) => (
             <li key={label}>
               <a
-                className="inline-flex min-h-[2.7rem] min-w-[2.7rem] items-center justify-start gap-[0.45rem] border border-[var(--footer-rule)] px-[0.65rem] py-[0.55rem] text-[var(--footer-ink)] no-underline transition-[border-color,background-color] duration-[180ms] hover:border-[var(--lime)] hover:bg-[var(--footer-hover)] min-[641px]:justify-center [&_svg]:size-[1.1rem]"
+                className="inline-flex min-h-[2.7rem] w-full min-w-[2.7rem] items-center justify-center gap-[0.45rem] border border-[var(--footer-rule)] px-[0.65rem] py-[0.55rem] text-[var(--footer-ink)] no-underline transition-[border-color,background-color] duration-[180ms] hover:border-[var(--lime)] hover:bg-[var(--footer-hover)] min-[641px]:w-auto [&_svg]:size-[1.1rem]"
                 href={href}
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
                 rel={href.startsWith("mailto:") ? undefined : "me noopener noreferrer"}
