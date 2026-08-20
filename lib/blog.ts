@@ -26,6 +26,7 @@ const dateSchema = z.preprocess(
 
 const blogFrontmatterSchema = z.object({
   title: z.string().trim().min(1).max(110),
+  author: z.string().trim().min(1).max(80).default("Marc Mansour"),
   description: z.string().trim().min(1).max(220),
   date: dateSchema,
   updated: dateSchema.optional(),

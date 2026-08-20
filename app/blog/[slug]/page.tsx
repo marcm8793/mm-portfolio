@@ -27,6 +27,7 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
+    authors: [{ name: post.author }],
     keywords: post.tags,
     alternates: { canonical },
     openGraph: {
@@ -91,7 +92,7 @@ async function BlogArticleContent({
     url: articleUrl,
     author: {
       "@type": "Person",
-      name: "Marc Mansour",
+      name: post.author,
       url: "https://www.marcmansour.dev",
     },
   };
@@ -126,6 +127,10 @@ async function BlogArticleContent({
             </div>
 
             <dl className="m-0 grid gap-4 border-t border-[var(--cobalt)] pt-4 font-mono [font-size:var(--type-label)] tracking-[0.045em] text-[var(--ink-muted)] uppercase min-[901px]:justify-self-end">
+              <div>
+                <dt className="text-[var(--cobalt)]">Author</dt>
+                <dd className="mt-1 mb-0">{post.author}</dd>
+              </div>
               <div>
                 <dt className="text-[var(--cobalt)]">Published</dt>
                 <dd className="mt-1 mb-0">
